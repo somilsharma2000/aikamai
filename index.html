@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Kamai — AI se kamai. Real software, real skills.</title>
+<meta name="description" content="AI Kamai: AI aur vibe coding se paise kamana seekho. Real software studio (Beyond Pixells) ke founder ke products — prompt vault, agency kit, SaaS starter kit.">
+<meta property="og:title" content="AI Kamai — AI se kamai">
+<meta property="og:description" content="Real software banane wale ke haath se digital products. Live proof, no gyaan.">
+<meta property="og:type" content="website">
+<style>
+  :root{
+    --bg:#0d0d12; --surface:#16161f; --surface2:#1e1e2a;
+    --text:#f4f2ff; --muted:#a9a4c4;
+    --grad:linear-gradient(93deg,#7c3aed 0%,#d926a9 55%,#ff7a1a 100%);
+    --grad-soft:linear-gradient(93deg,rgba(124,58,237,.18),rgba(217,38,169,.18),rgba(255,122,26,.18));
+    --green:#21c45d; --border:rgba(255,255,255,.09);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.6;overflow-x:clip}
+  .wrap{max-width:480px;margin:0 auto;padding:0 20px}
+  section{padding:44px 0}
+  h1,h2{line-height:1.2;letter-spacing:-.02em}
+  .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .pill{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border-radius:999px;background:var(--grad-soft);border:1px solid var(--border);color:var(--text)}
+  .btn{display:block;width:100%;text-align:center;padding:16px;border-radius:14px;font-weight:800;font-size:1.05rem;text-decoration:none;color:#fff}
+  .btn-grad{background:var(--grad)}
+  .btn-grad:active{filter:brightness(.92)}
+  .btn-ghost{background:var(--surface2);border:1px solid var(--border);color:var(--text)}
+  .badge{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:700;color:var(--green)}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green)}
+  /* hero */
+  .hero{padding:36px 0 20px;text-align:center}
+  .logo{font-size:1.6rem;font-weight:900;letter-spacing:-.03em}
+  .hero h1{font-size:2rem;margin:20px 0 12px}
+  .hero p{color:var(--muted);font-size:1.02rem}
+  .face{margin:26px auto 0;display:flex;flex-direction:column;align-items:center;gap:10px}
+  .avatar{width:88px;height:88px;border-radius:26px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:900;color:#fff}
+  .face small{color:var(--muted);font-size:.85rem}
+  /* proof */
+  .proof{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .proof h2{font-size:1.35rem;margin-bottom:8px}
+  .proof p{color:var(--muted);font-size:.95rem;margin-bottom:16px}
+  .chips{display:flex;flex-wrap:wrap;gap:10px}
+  .chip{display:block;background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:12px 14px;text-decoration:none;color:var(--text);font-weight:700;font-size:.9rem}
+  .chip span{display:block;font-weight:500;color:var(--green);font-size:.75rem;margin-top:2px}
+  /* products */
+  .products h2{font-size:1.5rem;margin-bottom:6px}
+  .sub{color:var(--muted);font-size:.95rem;margin-bottom:24px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:22px;margin-bottom:18px}
+  .card .name{font-size:1.2rem;font-weight:800}
+  .card .price{font-size:1.5rem;font-weight:900;margin:10px 0 6px}
+  .card .price s{color:var(--muted);font-weight:500;font-size:1rem}
+  .card p.desc{color:var(--muted);font-size:.93rem;margin-bottom:16px}
+  .card ul{list-style:none;margin:0 0 18px}
+  .card li{padding-left:22px;position:relative;font-size:.9rem;margin-bottom:6px}
+  .card li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:900}
+  .soon{font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#ff7a1a;margin-bottom:12px;display:inline-block}
+  /* sample */
+  .sample{background:var(--grad-soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center}
+  .sample h2{font-size:1.4rem;margin-bottom:8px}
+  .sample p{color:var(--muted);font-size:.95rem;margin-bottom:20px}
+  /* faq */
+  .faq h2{font-size:1.4rem;margin-bottom:18px}
+  details{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:12px}
+  summary{font-weight:700;cursor:pointer;font-size:.97rem}
+  details p{color:var(--muted);font-size:.92rem;margin-top:10px}
+  /* footer */
+  footer{padding:30px 0 110px;text-align:center;color:var(--muted);font-size:.83rem}
+  footer a{color:var(--muted)}
+  /* sticky CTA */
+  .sticky{position:fixed;bottom:0;left:0;right:0;padding:12px 16px;background:rgba(13,13,18,.92);backdrop-filter:blur(10px);border-top:1px solid var(--border);z-index:50}
+  .sticky .wrap{padding:0}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="logo">AI <span class="grad-text">Kamai</span></div>
+    <span class="pill" style="margin-top:14px">Ek aadmi · AI · Real software</span>
+    <h1>AI se kamai —<br><span class="grad-text">seekho, banao, becho.</span></h1>
+    <p>Mere naam Somil hoon. Main ek real software studio (Beyond Pixells) chalata hoon — Gym OS jaise products jo actual clients use karte hain. Yahan wohi cheezein milengi jo main khud roz use karta hoon.</p>
+    <div class="face">
+      <div class="avatar">SS</div>
+      <small>Somil Sharma · Founder, Beyond Pixells</small>
+    </div>
+  </header>
+
+  <section class="proof">
+    <h2>No gyaan. Sirf <span class="grad-text">live proof.</span></h2>
+    <p>Main sirf wo bechta hoon jo khud banata hoon. Mera software aaj live hai — jaake check karo:</p>
+    <div class="chips">
+      <a class="chip" href="https://gym-os-v3.vercel.app" target="_blank" rel="noopener">Gym OS <span>LIVE — real gyms use it</span></a>
+      <a class="chip" href="https://somilsharma2000.github.io/dentist-os-site/" target="_blank" rel="noopener">Dentist OS <span>LIVE</span></a>
+      <a class="chip" href="https://somilsharma2000.github.io/builder-os-site/" target="_blank" rel="noopener">Builder OS <span>LIVE</span></a>
+    </div>
+  </section>
+
+  <section class="products">
+    <h2>Products</h2>
+    <p class="sub">Launch hote hi WhatsApp pe sabse pehla message aapko milega.</p>
+
+    <div class="card">
+      <span class="soon">Launching this week</span>
+      <div class="name">🧠 AI Prompt Vault</div>
+      <div class="price">₹499</div>
+      <p class="desc">250+ prompts jo main khud client work, content aur coding me use karta hoon. Search karo, tap karo, copy karo.</p>
+      <ul>
+        <li>Client paise dene wale outreach scripts</li>
+        <li>Content + reels ideas prompts</li>
+        <li>Code debug + build prompts</li>
+        <li>Lifetime updates, one-time price</li>
+      </ul>
+      <a class="btn btn-grad" href="https://wa.me/917737077479?text=Hi%20AI%20Kamai%20-%20 mujhe%20Prompt%20Vault%20ke%20baare%20me%20batao" target="_blank" rel="noopener">WhatsApp pe "VAULT" bolo</a>
+    </div>
+
+    <div class="card">
+      <span class="soon">Launching this week</span>
+      <div class="name">🚀 AI Agency Launch Kit</div>
+      <div class="price">₹999</div>
+      <p class="desc">Apni AI agency 30 din me start karne ka complete kit — client kaise mile, kya bolo, kitna lo.</p>
+      <ul>
+        <li>Step-by-step launch playbook</li>
+        <li>15 outreach scripts (DM/email/WhatsApp)</li>
+        <li>Proposal + invoice templates</li>
+        <li>30-day action calendar</li>
+      </ul>
+      <a class="btn btn-grad" href="https://wa.me/917737077479?text=Hi%20AI%20Kamai%20-%20mujhe%20Agency%20Launch%20Kit%20ke%20baare%20me%20batao" target="_blank" rel="noopener">WhatsApp pe "KIT" bolo</a>
+    </div>
+
+    <div class="card">
+      <span class="soon">Coming soon</span>
+      <div class="name">🛠️ SaaS Starter Kit</div>
+      <div class="price">₹4,999</div>
+      <p class="desc">Mera real production SaaS code — auth, UPI payments, WhatsApp notifications, multi-tenant, sab ready. Clone, rename, launch.</p>
+      <ul>
+        <li>Gym OS v3 stack se banaya gaya (real shipped product)</li>
+        <li>Working checkout flow out of the box</li>
+        <li>Vertical swap guide (gym → tuition → clinic)</li>
+        <li>2 ghante me live deploy guide</li>
+      </ul>
+      <a class="btn btn-ghost" href="https://wa.me/917737077479?text=Hi%20AI%20Kamai%20-%20mujhe%20SaaS%20Starter%20Kit%20ke%20baare%20me%20batao" target="_blank" rel="noopener">Waitlist me naam likhwao</a>
+    </div>
+  </section>
+
+  <section class="sample">
+    <h2>Pehle free maalo. 🎁</h2>
+    <p>Mere 10 best prompts bilkul free — paise ki baat baad me. WhatsApp pe "SAMPLE" likh ke bhejo.</p>
+    <a class="btn btn-grad" href="https://wa.me/917737077479?text=SAMPLE%20-%20mujhe%20AI%20Kamai%20ke%2010%20free%20prompts%20chahiye" target="_blank" rel="noopener">Free: 10 Best Prompts</a>
+  </section>
+
+  <section class="faq">
+    <h2>Sawaal? Seedha jawaab.</h2>
+    <details>
+      <summary>Ye products kab milega?</summary>
+      <p>Prompt Vault aur Agency Kit is week me launch ho rahe hain. Launch se pehle WhatsApp pe join kar lo — sabse pehla link aapko milega.</p>
+    </details>
+    <details>
+      <summary>Ye sach me kaam karega ya "guru" type bech raha hai?</summary>
+      <p>Wahi to fark hai. Mera software (Gym OS, Dentist OS) aaj live hai aur real clients use karte hain. Jo bech raha hoon, wo main khud banata aur use karta hoon. Jo cheez aapke kaam ki nahi, wo mat kharido — main khud bolunga.</p>
+    </details>
+    <details>
+      <summary>Payment kaise hoga?</summary>
+      <p>UPI se. Launch ke din Instamojo checkout link lagega — instant delivery milegi.</p>
+    </details>
+    <details>
+      <summary>Agar pasand na aaye to?</summary>
+      <p>7 din ke andar refund policy — bina sawaal. (Digital products, to usage ki imaandaari pe — but main trust pe chalta hoon.)</p>
+    </details>
+    <details>
+      <summary>Main beginner hoon, ye mere liye hai?</summary>
+      <p>Prompt Vault aur Agency Kit beginner-first hain. Starter Kit me thodi technical understanding chahiye — vibe coding basics. Dono ka rasta yahi hai: pehle Vault, phir Kit.</p>
+    </details>
+  </section>
+
+  <footer>
+    <p><strong>AI Kamai</strong> — a Beyond Pixells venture.</p>
+    <p style="margin-top:6px">Real studio. Real software. Honest price.</p>
+    <p style="margin-top:14px"><a href="https://wa.me/917737077479" target="_blank" rel="noopener">WhatsApp</a> · <a href="https://somilsharma2000.github.io/beyond-pixells/" target="_blank" rel="noopener">Beyond Pixells</a></p>
+  </footer>
+</div>
+
+<div class="sticky">
+  <a class="btn btn-grad" href="https://wa.me/917737077479?text=Hi%20AI%20Kamai%20-%20launch%20update%20chahiye" target="_blank" rel="noopener">Launch update chahiye → WhatsApp</a>
+</div>
+
+</body>
+</html>
