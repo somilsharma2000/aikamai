@@ -158,15 +158,27 @@
       calEl.appendChild(d);
     });
     function calc(){
-      var goal = parseFloat(document.getElementById("goal").value) || 0;
-      var hours = parseFloat(document.getElementById("hours").value) || 1;
-      var ov = parseInt(document.getElementById("overhead").value)/100;
+      var goal = parseFloat(document.getElementById("goal").value);
+      var hours = parseFloat(document.getElementById("hours").value);
+      var oh = parseFloat(document.getElementById("overhead").value);
+      if (!isFinite(goal) || goal <= 0) {
+        document.getElementById("calcOut").innerHTML = "Pehle apna monthly goal daalo (0 se zyada) — phir rate nikalenge.";
+        return;
+      }
+      if (!isFinite(hours) || hours <= 0) {
+        document.getElementById("calcOut").innerHTML = "Hafte me kitne ghante kaam karoge, wo daalo (1-100).";
+        return;
+      }
+      hours = Math.min(hours, 100);
+      var ov = (isFinite(oh) ? Math.min(Math.max(oh, 0), 90) : 0) / 100;
       var billable = hours * 4 * (1 - ov);
-      var rate = billable > 0 ? Math.ceil(goal / billable / 50) * 50 : 0;
-      var perClient = rate * billable / 4 || 1;
+      var rate = Math.ceil(goal / billable / 50) * 50;
+      var perClient = Math.max(rate * billable / 4, 1);
+      var clients = Math.min(Math.ceil(goal / perClient), 99);
+      var goalShow = goal > 999999 ? (goal/100000).toFixed(0) + " lakh" : Math.round(goal).toLocaleString("en-IN");
       document.getElementById("calcOut").innerHTML =
         "Tujhe <b>₹"+rate+"/ghanta</b> charge karna chahiye (billable ~"+billable.toFixed(0)+" ghante/mahina).<br>" +
-        "Ek client <b>₹"+Math.round(perClient)+"</b>/mahina ka retainer => <b>"+Math.ceil(goal/perClient)+"</b> client(s) = ₹"+goal+" goal.<br>" +
+        "Ek client <b>₹"+Math.round(perClient)+"</b>/mahina ka retainer => <b>"+clients+"</b> client(s) = ₹"+goalShow+" goal.<br>" +
         "Chhota project (8-12 ghante): <b>₹"+rate*8+"</b> se ₹"+rate*12+" range.";
     }
     ["goal","hours","overhead"].forEach(function(id){
