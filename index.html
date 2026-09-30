@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="hi-Latn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Kamai — AI se kamai. Real software, real skills.</title>
-<meta name="description" content="AI Kamai: AI aur vibe coding se paise kamana seekho. Prompt Vault, Agency Kit, SaaS Starter Kit — sab maine AI ke saath, zero budget me, scratch se banaya.">
+<meta name="description" content="AI Kamai: AI aur vibe coding se paise kamana seekho. Prompt Vault ₹499, Agency Kit ₹999, SaaS Starter Kit ₹4,999 — sab maine AI ke saath, zero budget me, scratch se banaya.">
+<link rel="canonical" href="https://somilsharma2000.github.io/aikamai/">
 <meta property="og:title" content="AI Kamai — AI se kamai">
 <meta property="og:description" content="Real software banane wale ke haath se digital products. Live proof, no gyaan.">
 <meta property="og:type" content="website">
-    <meta property="og:image" content="https://somilsharma2000.github.io/aikamai/og-image.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="AI Kamai - AI se kamai. Prompt Vault, Agency Kit, SaaS Starter Kit.">
-    <meta property="og:url" content="https://somilsharma2000.github.io/aikamai/">
+<meta property="og:image" content="https://somilsharma2000.github.io/aikamai/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="AI Kamai - AI se kamai. Prompt Vault, Agency Kit, SaaS Starter Kit.">
+<meta property="og:url" content="https://somilsharma2000.github.io/aikamai/">
+<meta name="twitter:card" content="summary_large_image">
 <style>
   :root{
     --bg:#0d0d12; --surface:#16161f; --surface2:#1e1e2a;
@@ -20,21 +22,27 @@
     --grad:linear-gradient(93deg,#7c3aed 0%,#d926a9 55%,#ff7a1a 100%);
     --grad-soft:linear-gradient(93deg,rgba(124,58,237,.18),rgba(217,38,169,.18),rgba(255,122,26,.18));
     --green:#21c45d; --border:rgba(255,255,255,.09);
+    --border-hi:rgba(255,255,255,.22);
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
   body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.6;overflow-x:clip}
+  :focus-visible{outline:2px solid #a78bfa;outline-offset:3px;border-radius:6px}
   .wrap{max-width:480px;margin:0 auto;padding:0 20px}
   section{padding:44px 0}
   h1,h2{line-height:1.2;letter-spacing:-.02em}
   .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
   .pill{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border-radius:999px;background:var(--grad-soft);border:1px solid var(--border);color:var(--text)}
-  .btn{display:block;width:100%;text-align:center;padding:16px;border-radius:14px;font-weight:800;font-size:1.05rem;text-decoration:none;color:#fff}
+  .btn{display:block;width:100%;text-align:center;padding:16px;border-radius:14px;font-weight:800;font-size:1.05rem;text-decoration:none;color:#fff;transition:transform .15s ease,filter .15s ease}
   .btn-grad{background:var(--grad)}
-  .btn-grad:active{filter:brightness(.92)}
+  .btn-grad:hover{filter:brightness(1.1)}
+  .btn-grad:active{transform:scale(.98);filter:brightness(.92)}
   .btn-ghost{background:var(--surface2);border:1px solid var(--border);color:var(--text)}
+  .btn-ghost:hover{border-color:var(--border-hi)}
+  .btn-ghost:active{transform:scale(.98)}
   .badge{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:700;color:var(--green)}
-  .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green)}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);animation:pulse 2.2s ease-in-out infinite}
+  @keyframes pulse{0%,100%{box-shadow:0 0 4px var(--green)}50%{box-shadow:0 0 10px var(--green)}}
   /* hero */
   .hero{padding:36px 0 20px;text-align:center}
   .logo{font-size:1.6rem;font-weight:900;letter-spacing:-.03em}
@@ -48,28 +56,32 @@
   .proof h2{font-size:1.35rem;margin-bottom:8px}
   .proof p{color:var(--muted);font-size:.95rem;margin-bottom:16px}
   .chips{display:flex;flex-wrap:wrap;gap:10px}
-  .chip{display:block;background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:12px 14px;text-decoration:none;color:var(--text);font-weight:700;font-size:.9rem}
+  .chip{display:block;background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:12px 14px;text-decoration:none;color:var(--text);font-weight:700;font-size:.9rem;transition:transform .15s ease,border-color .15s ease}
+  .chip:hover{transform:translateY(-2px);border-color:var(--border-hi)}
   .chip span{display:block;font-weight:500;color:var(--green);font-size:.75rem;margin-top:2px}
   /* products */
   .products h2{font-size:1.5rem;margin-bottom:6px}
-  .sub{color:var(--muted);font-size:.95rem;margin-bottom:24px}
-  .card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:22px;margin-bottom:18px}
+  .sub{color:var(--muted);font-size:.9rem;margin-bottom:24px}
+  .sub b{color:var(--text);font-weight:700}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:22px;margin-bottom:18px;transition:transform .18s ease,border-color .18s ease}
+  .card:hover{transform:translateY(-3px);border-color:var(--border-hi)}
   .card .name{font-size:1.2rem;font-weight:800}
   .card .price{font-size:1.5rem;font-weight:900;margin:10px 0 6px}
-  .card .price s{color:var(--muted);font-weight:500;font-size:1rem}
   .card p.desc{color:var(--muted);font-size:.93rem;margin-bottom:16px}
   .card ul{list-style:none;margin:0 0 18px}
   .card li{padding-left:22px;position:relative;font-size:.9rem;margin-bottom:6px}
   .card li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:900}
-  .soon{font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#ff7a1a;margin-bottom:12px;display:inline-block}
   /* sample */
   .sample{background:var(--grad-soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center}
   .sample h2{font-size:1.4rem;margin-bottom:8px}
   .sample p{color:var(--muted);font-size:.95rem;margin-bottom:20px}
   /* faq */
   .faq h2{font-size:1.4rem;margin-bottom:18px}
-  details{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:12px}
+  details{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:12px;transition:border-color .18s ease}
+  details[open]{border-color:var(--border-hi)}
+  details[open] summary{color:var(--text)}
   summary{font-weight:700;cursor:pointer;font-size:.97rem}
+  summary::marker{color:#a78bfa}
   details p{color:var(--muted);font-size:.92rem;margin-top:10px}
   /* footer */
   footer{padding:30px 0 110px;text-align:center;color:var(--muted);font-size:.83rem}
@@ -77,23 +89,69 @@
   /* sticky CTA */
   .sticky{position:fixed;bottom:0;left:0;right:0;padding:12px 16px;background:rgba(13,13,18,.92);backdrop-filter:blur(10px);border-top:1px solid var(--border);z-index:50}
   .sticky .wrap{padding:0}
+  /* scroll reveal (motion system) */
+  .reveal{opacity:0;transform:translateY(10px);transition:opacity .45s ease,transform .45s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    .dot{animation:none}
+    .btn,.card,.chip{transition:none}
+  }
+  /* ===== TABLET COMPOSITION (>=768px) ===== */
+  @media (min-width:768px){
+    .wrap{max-width:760px;padding:0 28px}
+    .chips{display:grid;grid-template-columns:repeat(3,1fr)}
+    .products-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .card{margin-bottom:0}
+    .card:nth-child(3){grid-column:1 / -1;max-width:50%;justify-self:center;width:100%}
+    .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .faq-grid details{margin-bottom:0}
+    .sticky .btn{max-width:480px;margin:0 auto}
+  }
+  /* ===== DESKTOP COMPOSITION (>=900px) ===== */
+  @media (min-width:900px){
+    .wrap{max-width:1100px;padding:0 32px}
+    section{padding:64px 0}
+    .hero{padding:56px 0 32px;text-align:left;display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center}
+    .hero h1{font-size:2.7rem;margin:22px 0 14px}
+    .hero p{font-size:1.08rem}
+    .hero .intro{text-align:left}
+    .face{margin:0;flex-direction:row;gap:16px;justify-content:flex-end;align-items:center;
+      background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:28px}
+    .face small{text-align:left}
+    .avatar{width:104px;height:104px;font-size:2.4rem;flex-shrink:0}
+    .chips{display:grid;grid-template-columns:repeat(3,1fr)}
+    .chip{padding:18px}
+    .products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+    .card:nth-child(3){grid-column:auto;max-width:none;justify-self:auto}
+    .card{margin-bottom:0;display:flex;flex-direction:column}
+    .card .btn{margin-top:auto}
+    .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .faq-grid details{margin-bottom:0}
+    .sample{padding:56px 0}
+    .sample .btn{max-width:420px;margin:0 auto}
+    .sticky .btn{max-width:480px;margin:0 auto}
+    footer{padding-bottom:120px}
+  }
 </style>
 </head>
 <body>
 
 <div class="wrap">
-  <header class="hero">
-    <div class="logo">AI <span class="grad-text">Kamai</span></div>
-    <span class="pill" style="margin-top:14px">Ek aadmi · AI · Real software</span>
-    <h1>AI se kamai —<br><span class="grad-text">seekho, banao, becho.</span></h1>
-    <p>Mere naam Somil hoon. Main AI ke saath products banata hoon — ye poora store, Prompt Vault, Agency Kit, sab maine zero budget me, scratch se banaya hai. Yahan wahi system milega jo main khud use karta hoon.</p>
+  <header class="hero reveal">
+    <div class="intro">
+      <div class="logo">AI <span class="grad-text">Kamai</span></div>
+      <span class="pill" style="margin-top:14px">Ek aadmi · AI · Real software</span>
+      <h1>AI se kamai —<br><span class="grad-text">seekho, banao, becho.</span></h1>
+      <p>Mere naam Somil hoon. Main AI ke saath products banata hoon — ye poora store, Prompt Vault, Agency Kit, sab maine zero budget me, scratch se banaya hai. Yahan wahi system milega jo main khud use karta hoon.</p>
+    </div>
     <div class="face">
-      <div class="avatar">SS</div>
-      <small>Somil Sharma · Founder, AI Kamai</small>
+      <div class="avatar" aria-hidden="true">SS</div>
+      <small><strong style="color:var(--text)">Somil Sharma</strong><br>Founder, AI Kamai — khud code karta hai, khud reply karta hai</small>
     </div>
   </header>
 
-  <section class="proof">
+  <section class="proof reveal">
     <h2>No gyaan. Sirf <span class="grad-text">live proof.</span></h2>
     <p>Main sirf wo bechta hoon jo khud banata hoon. Sab kuch isi page pe live hai — jaake check karo:</p>
     <div class="chips">
@@ -105,9 +163,10 @@
 
   <section class="products">
     <h2>Products</h2>
-    <p class="sub">Launch hote hi WhatsApp pe sabse pehla message aapko milega.</p>
+    <p class="sub"><b>One-time price</b> · UPI · 7-din refund · WhatsApp support</p>
 
-    <div class="card">
+    <div class="products-grid">
+    <div class="card reveal">
       <span class="badge" style="margin-bottom:12px"><i class="dot"></i>LIVE — abhi kharido</span>
       <div class="name">AI Prompt Vault</div>
       <div class="price">₹499</div>
@@ -123,7 +182,7 @@
       <a class="btn btn-ghost" style="margin-top:10px" href="vault/free.html">Pehle 10 prompts FREE try karo</a>
     </div>
 
-    <div class="card">
+    <div class="card reveal">
       <span class="badge" style="margin-bottom:12px"><i class="dot"></i>LIVE — abhi kharido</span>
       <div class="name">AI Agency Launch Kit</div>
       <div class="price">₹999</div>
@@ -139,22 +198,24 @@
       <a class="btn btn-grad" href="https://wa.me/917737077479?text=KIT%20-%20mujhe%20Agency%20Launch%20Kit%20kharidna%20hai%20(%E2%82%B9999)" target="_blank" rel="noopener">Kharido — ₹999 (UPI)</a>
     </div>
 
-    <div class="card">
-      <span class="soon">Coming soon</span>
+    <div class="card reveal">
+      <span class="badge" style="margin-bottom:12px"><i class="dot"></i>LIVE — abhi kharido</span>
       <div class="name">SaaS Starter Kit</div>
       <div class="price">₹4,999</div>
-      <p class="desc">Mera real production SaaS code — auth, UPI payments, WhatsApp notifications, multi-tenant, sab ready. Clone, rename, launch.</p>
+      <p class="desc">Mera real production SaaS code — Next.js + TypeScript + Prisma: login, customers, invoices, UPI checkout, WhatsApp notifications, multi-tenant — sab ready. Clone karke apna SaaS launch karo.</p>
       <ul>
         <li>Scratch se naya, clean production stack — koi legacy code nahi</li>
-        <li>Working checkout flow out of the box</li>
-        <li>Vertical swap guide (gym → tuition → clinic)</li>
-        <li>2 ghante me live deploy guide</li>
+        <li>UPI checkout out of the box (demo + Razorpay)</li>
+        <li>15 tests included — code aata hai to khud verify karo</li>
+        <li>Vertical swap guide (gym → tuition → clinic, 4 min me)</li>
+        <li>15-minute deploy guide, full docs included</li>
       </ul>
-      <a class="btn btn-ghost" href="https://wa.me/917737077479?text=Hi%20AI%20Kamai%20-%20mujhe%20SaaS%20Starter%20Kit%20ke%20baare%20me%20batao" target="_blank" rel="noopener">Waitlist me naam likhwao</a>
+      <a class="btn btn-grad" href="https://wa.me/917737077479?text=STARTER%20KIT%20-%20mujhe%20SaaS%20Starter%20Kit%20kharidna%20hai%20(%E2%82%B94%2C999)" target="_blank" rel="noopener">Kharido — ₹4,999 (UPI)</a>
+    </div>
     </div>
   </section>
 
-  <section class="sample">
+  <section class="sample reveal">
     <h2>Pehle free maalo.</h2>
     <p>Mere 10 best prompts bilkul free — paise ki baat baad me. WhatsApp pe "SAMPLE" likh ke bhejo.</p>
     <a class="btn btn-grad" href="https://wa.me/917737077479?text=SAMPLE%20-%20mujhe%20AI%20Kamai%20ke%2010%20free%20prompts%20chahiye" target="_blank" rel="noopener">Free: 10 Best Prompts</a>
@@ -162,30 +223,32 @@
 
   <section class="faq">
     <h2>Sawaal? Seedha jawaab.</h2>
-    <details>
+    <div class="faq-grid">
+    <details class="reveal">
       <summary>Ye products kab milega?</summary>
-      <p>Prompt Vault aur Agency Kit abhi LIVE hain — "Kharido" button daba ke WhatsApp pe bolo, UPI ke baad turant access link. Launch se pehle WhatsApp pe join kar lo — sabse pehla link aapko milega.</p>
+      <p>Turant. Vault aur Kit LIVE hain — Kharido button → WhatsApp → UPI → access link wahi milega. Starter Kit zip WhatsApp pe deliver hota hai. Sab kuch isi page pe live hai — jo bech raha hoon, wo pehle bana chuka hoon.</p>
     </details>
-    <details>
+    <details class="reveal">
       <summary>Ye sach me kaam karega ya "guru" type bech raha hai?</summary>
-      <p>Wahi to fark hai. Ye store aur dono products isi page pe live hain — jo bech raha hoon, wo maine khud banaya aur roz use karta hoon. Jo cheez aapke kaam ki nahi, wo mat kharido — main khud bolunga.</p>
+      <p>Wahi to fark hai. Ye store aur saare products isi page pe live hain — jo bech raha hoon, wo maine khud banaya aur roz use karta hoon. Jo cheez aapke kaam ki nahi, wo mat kharido — main khud bolunga.</p>
     </details>
-    <details>
+    <details class="reveal">
       <summary>Payment kaise hoga?</summary>
-      <p>UPI se. Launch ke din Instamojo checkout link lagega — instant delivery milegi.</p>
+      <p>UPI se, WhatsApp pe hi. Instamojo checkout link lagega — instant delivery milegi.</p>
     </details>
-    <details>
+    <details class="reveal">
       <summary>Agar pasand na aaye to?</summary>
       <p>7 din ke andar refund policy — bina sawaal. (Digital products, to usage ki imaandaari pe — but main trust pe chalta hoon.)</p>
     </details>
-    <details>
+    <details class="reveal">
       <summary>Main beginner hoon, ye mere liye hai?</summary>
-      <p>Prompt Vault aur Agency Kit beginner-first hain. Starter Kit me thodi technical understanding chahiye — vibe coding basics. Dono ka rasta yahi hai: pehle Vault, phir Kit.</p>
+      <p>Prompt Vault aur Agency Kit beginner-first hain. Starter Kit me thodi technical understanding chahiye — vibe coding basics. Sahi rasta: pehle Vault, phir jab clients aayen — Kit.</p>
     </details>
-    <details>
+    <details class="reveal">
       <summary>Kharidne ke baad madad milegi?</summary>
       <p>Haan — WhatsApp pe hi. Wahan se kharida, wahan se support. Product use karte waqt koi problem ya sawaal ho to seedha message karo; khud hi jawab dunga, koi bot nahi. (Vault aur Kit me 'lifetime updates' ka matlab: naya version aaye to purane kharidne wale ko bhi free milega.)</p>
     </details>
+    </div>
   </section>
 
   <footer>
@@ -196,8 +259,46 @@
 </div>
 
 <div class="sticky">
-  <a class="btn btn-grad" href="https://wa.me/917737077479?text=Hi%20AI%20Kamai%20-%20launch%20update%20chahiye" target="_blank" rel="noopener">Launch update chahiye → WhatsApp</a>
+  <a class="btn btn-grad" href="https://wa.me/917737077479?text=SAMPLE%20-%20mujhe%20AI%20Kamai%20ke%2010%20free%20prompts%20chahiye" target="_blank" rel="noopener">Free sample — WhatsApp pe 'SAMPLE' likho</a>
 </div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"AI Kamai","url":"https://somilsharma2000.github.io/aikamai/","logo":"https://somilsharma2000.github.io/aikamai/og-image.png","founder":{"@type":"Person","name":"Somil Sharma"},"description":"AI se kamai: honest digital products for individuals learning to earn with AI. Built with AI, zero budget, from scratch.","contactPoint":{"@type":"ContactPoint","contactType":"customer support","url":"https://wa.me/917737077479","availableLanguage":["Hindi","English"]}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","itemListElement":[
+{"@type":"Product","position":1,"name":"AI Prompt Vault","description":"177 AI prompts in 16 categories — a web app with search, one-tap copy, personalized auto-fill and favorites. Not a PDF.","brand":{"@type":"Brand","name":"AI Kamai"},"offers":{"@type":"Offer","price":"499","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://somilsharma2000.github.io/aikamai/"},"url":"https://somilsharma2000.github.io/aikamai/#products"},
+{"@type":"Product","position":2,"name":"AI Agency Launch Kit","description":"Complete agency operating system: 7-step playbook, 25 outreach scripts, objection bank, 12-niche directory, pricing engine, templates, 30-day calendar.","brand":{"@type":"Brand","name":"AI Kamai"},"offers":{"@type":"Offer","price":"999","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://somilsharma2000.github.io/aikamai/"},"url":"https://somilsharma2000.github.io/aikamai/#products"},
+{"@type":"Product","position":3,"name":"SaaS Starter Kit","description":"Production-ready multi-tenant SaaS codebase: Next.js + TypeScript + Prisma, auth, customers, invoices, UPI checkout, WhatsApp notifications, 15 tests, full docs.","brand":{"@type":"Brand","name":"AI Kamai"},"offers":{"@type":"Offer","price":"4999","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://somilsharma2000.github.io/aikamai/"},"url":"https://somilsharma2000.github.io/aikamai/#products"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Ye products kab milega?","acceptedAnswer":{"@type":"Answer","text":"Turant. Vault aur Kit LIVE hain — Kharido button, WhatsApp, UPI, access link wahi milega. Starter Kit zip WhatsApp pe deliver hota hai."}},
+{"@type":"Question","name":"Ye sach me kaam karega ya guru type bech raha hai?","acceptedAnswer":{"@type":"Answer","text":"Ye store aur saare products isi page pe live hain — jo bech raha hoon, wo maine khud banaya aur roz use karta hoon. Jo cheez aapke kaam ki nahi, wo mat kharido."}},
+{"@type":"Question","name":"Payment kaise hoga?","acceptedAnswer":{"@type":"Answer","text":"UPI se, WhatsApp pe hi. Instamojo checkout link lagega — instant delivery milegi."}},
+{"@type":"Question","name":"Agar pasand na aaye to?","acceptedAnswer":{"@type":"Answer","text":"7 din ke andar refund policy — bina sawaal."}},
+{"@type":"Question","name":"Main beginner hoon, ye mere liye hai?","acceptedAnswer":{"@type":"Answer","text":"Prompt Vault aur Agency Kit beginner-first hain. Starter Kit me vibe coding basics chahiye."}},
+{"@type":"Question","name":"Kharidne ke baad madad milegi?","acceptedAnswer":{"@type":"Answer","text":"Haan — WhatsApp pe hi support, khud reply karta hoon. Lifetime updates purane buyers ko bhi free."}}]}
+</script>
+<script>
+(function(){
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+    return;
+  }
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {rootMargin: '0px 0px -8% 0px', threshold: 0.05});
+  els.forEach(function(el){ io.observe(el); });
+})();
+</script>
 
 </body>
 </html>
