@@ -81,3 +81,9 @@ Built, tested, Pass-B'd, live-verified as of 1 Oct 2026:
 4. At ₹50K: Phase 1 (Coaching OS) begins — that's a new blueprint, not this one.
 
 **Golden rule: if something is wrong, do not ask permission to fix it — fix it, test it, log it.**
+
+## Operating law (1 Oct 2026 — supersedes earlier process notes)
+
+ALL product work runs the **Autonomous Product Transformation Engine**: DISCOVER→INSPECT→RESEARCH→DIAGNOSE→PRIORITIZE→DESIGN→IMPLEMENT→TEST→SELF-CRITIQUE→IMPROVE→RE-TEST. Act, don't report; fix before asking; report per cycle as FOUND/WHY/ACTION/VERIFICATION/REMAINING. Hard rules: zero-generic, 5-pass (FUNCTION→UX→VISUAL→ENGINEERING→CRITICAL REVIEW), one product at a time (Store→Free→Vault→Kit→Starter→ops→ecosystem), P0 before P3, no invented claims ever, distinguish VERIFIED FACT / INFERENCE / DESIGN JUDGMENT. Master audit standard: complete commercial operating system (~40 domains + recursive unknown-domain check) — full register in the owner's notes at company-master-plan/business-audit-universe/.
+
+Estate state after cycle 4: content AES-256-GCM encrypted (no plaintext in public repo; plaintext + build script archived at aikamai-starter-kit/content-archive/, PRIVATE), Terms/Privacy/Refund live + favicon + OG everywhere, all quantitative claims verified true (17 tests, 177 prompts, 15 categories, 25 scripts, 10 objections, 12 niches, 30-day calendar), health check 14/14, CRM Lead.source includes aikamai-ig / aikamai-store.
