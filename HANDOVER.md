@@ -43,7 +43,7 @@ Fee-corrected target: 20 Agency Kits + 7 Starter Kits ≈ ₹51.6K net (Instamoj
 
 Built, tested, Pass-B'd, live-verified as of 1 Oct 2026:
 - Store v2: responsive composition (1→2→3 cols across 320-1440px), motion system (reveals w/ prefers-reduced-motion, hover lifts, focus rings), live-state copy, Starter Kit marked LIVE, Organization+Products+FAQPage JSON-LD, canonical, trust strip. 6 viewports zero overflow, 0 JS errors.
-- Vault v1.1: 177 prompts, 17 categories, search, favorites (localStorage), profile auto-fill (naam/service/niche/city → "Personalized" copy), SVG icons.
+- Vault v1.1: 177 prompts, 15 categories, search, favorites (localStorage), profile auto-fill (naam/service/niche/city → "Personalized" copy), SVG icons.
 - Kit v1.1: 10 tabs (playbook, scripts 25, objections 10, niches 12, pricing calculator + benchmarks, templates, delivery system, legal/money, 30-day calendar, AI Kamai case study).
 - Starter Kit v1.0.0: 15/15 vitest green, build clean, cross-tenant isolation verified, payment idempotency verified (double webhook cannot double-charge), vertical-swap dry run proven in under 4 min (gym example), delivery zip packaged.
 - 30 reel scripts ready (shoot-ready, honest-claims law applied; reels 28/30 ship ONLY with real buyers/numbers).
