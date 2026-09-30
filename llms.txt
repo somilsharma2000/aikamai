@@ -4,7 +4,8 @@
 AI Kamai is a creator brand selling three digital products, honest-claims only:
 - Prompt Vault (₹499): 177 categorized, searchable AI prompts in a web app (not a PDF). Profile auto-fill personalizes [niche]/[service]/[city]. Free sample: 10 best prompts, no payment.
 - Agency Launch Kit (₹999): Hinglish playbook to start an AI agency: 25 outreach scripts (DM/WhatsApp/email), objection bank, 12-niche directory, pricing calculator with India benchmarks, templates, 30-day action calendar, delivery system, legal & money basics.
-- SaaS Starter Kit (₹4,999): complete multi-tenant SaaS codebase (Next.js 14 + TypeScript + Prisma): auth, customers, invoices, UPI checkout (demo mode out of the box + Razorpay), WhatsApp notifications, 15 tests, full docs. Clone, run 2 commands, deploy in ~15 min.
+- SaaS Starter Kit (₹4,999): complete multi-tenant SaaS codebase (Next.js 14 + TypeScript + Prisma): auth, customers, invoices, UPI checkout (demo mode out of the box + Razorpay), WhatsApp notifications, 17 tests, full docs. Clone, run 2 commands, deploy in ~15 min.
 
 Store: https://somilsharma2000.github.io/aikamai/
 Contact: WhatsApp link on the store page.
+Policies: terms (https://somilsharma2000.github.io/aikamai/terms.html), privacy (https://somilsharma2000.github.io/aikamai/privacy.html), refund — 7-day no-questions (https://somilsharma2000.github.io/aikamai/refund.html).
