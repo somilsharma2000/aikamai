@@ -279,7 +279,7 @@ var CAL = [
       var rate = billable > 0 ? Math.ceil(goal / billable / 50) * 50 : 0;
       var projects = Math.ceil(goal / Math.max(rate * billable / 4, 1));
       document.getElementById("calcOut").innerHTML =
-        "Tujo <b>₹"+rate+"/ghanta</b> charge karna chahiye (billable ~"+billable.toFixed(0)+" ghante/mahina).<br>" +
+        "Tujhe <b>₹"+rate+"/ghanta</b> charge karna chahiye (billable ~"+billable.toFixed(0)+" ghante/mahina).<br>" +
         "Ek client <b>₹"+(rate*billable/4).toFixed(0)+"</b>/mahina ka retainer => <b>"+Math.ceil(goal/(rate*billable/4||1))+"</b> client"+(Math.ceil(goal/(rate*billable/4||1))>1?"s":"")+" = ₹"+goal+" goal. Chhota project (5-10 ghante): <b>₹"+rate*8+"</b> se ₹"+rate*12+" range.";
     }
     ["goal","hours","overhead"].forEach(function(id){
