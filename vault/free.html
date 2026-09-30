@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Kamai — 10 Free Prompts</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root{--bg:#0d0d12;--surface:#16161f;--surface2:#1e1e2a;--text:#f4f2ff;--muted:#a9a4c4;
+    --grad:linear-gradient(93deg,#7c3aed 0%,#d926a9 55%,#ff7a1a 100%);
+    --green:#21c45d;--border:rgba(255,255,255,.09)}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.6;overflow-x:clip}
+  .wrap{max-width:560px;margin:0 auto;padding:0 18px 90px}
+  .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  h1{font-size:1.5rem;margin:22px 0 4px}
+  .muted{color:var(--muted)}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:15px;padding:16px;margin:14px 0}
+  .cat{font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#c084fc}
+  .card h3{font-size:1rem;margin:4px 0 8px}
+  .pt{font-size:.88rem;color:var(--muted);white-space:pre-wrap}
+  .row{display:flex;gap:8px;margin-top:12px}
+  .act{flex:1;text-align:center;padding:10px;border-radius:10px;border:none;font-weight:800;font-size:.85rem;cursor:pointer}
+  .copy{background:var(--grad);color:#fff}
+  .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#1e1e2a;border:1px solid var(--green);color:#fff;padding:10px 18px;border-radius:10px;font-size:.85rem;opacity:0;transition:opacity .3s;pointer-events:none}
+  .toast.show{opacity:1}
+  .pitch{background:linear-gradient(93deg,rgba(124,58,237,.18),rgba(217,38,169,.18),rgba(255,122,26,.18));border:1px solid var(--border);border-radius:16px;padding:22px;margin:22px 0;text-align:center}
+  .pitch h2{font-size:1.2rem;margin-bottom:8px}
+  .pitch p{font-size:.92rem;margin-bottom:16px}
+  .btn{display:inline-block;padding:14px 24px;border-radius:13px;font-weight:800;text-decoration:none;color:#fff;background:var(--grad)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>🎁 10 Best Prompts — <span class="grad-text">Free</span></h1>
+  <p class="muted">Ye poore Vault ke 125 prompts ka sample hai. Copy karo, try karo — kaam aaye to poora Vault ₹499 me hai (lifetime updates).</p>
+  <div id="list"></div>
+  <div class="pitch">
+    <h2>Poora Vault chahiye?</h2>
+    <p>125 prompts · 8 categories · search + one-tap copy · lifetime updates · ₹499 one-time</p>
+    <a class="btn" href="https://wa.me/917737077479?text=VAULT%20-%20mujhe%20Prompt%20Vault%20kharidna%20hai%20(%E2%82%B9499)">WhatsApp pe "VAULT" bhejo</a>
+  </div>
+</div>
+<div class="toast" id="toast">Copy ho gaya ✓</div>
+<script src="prompts.js"></script>
+<script>
+(function(){
+  var FREE_IDX = [0,18,35,36,71,72,85,101,115,116];
+  var el = document.getElementById("list");
+  FREE_IDX.forEach(function(i){
+    var p = PROMPTS[i];
+    var d = document.createElement("div");
+    d.className = "card";
+    d.innerHTML = '<div class="cat">'+p.c+'</div><h3>'+p.t+'</h3><p class="pt">'+p.p+'</p>'
+      + '<div class="row"><button class="act copy">📋 Copy</button></div>';
+    d.querySelector(".copy").onclick = function(){
+      (navigator.clipboard?navigator.clipboard.writeText(p.p):Promise.reject()).then(t).catch(function(){
+        var ta=document.createElement("textarea");ta.value=p.p;document.body.appendChild(ta);ta.select();
+        document.execCommand("copy");document.body.removeChild(ta);t();
+      });
+    };
+    el.appendChild(d);
+  });
+  function t(){var x=document.getElementById("toast");x.classList.add("show");setTimeout(function(){x.classList.remove("show")},1400);}
+})();
+</script>
+</body>
+</html>
