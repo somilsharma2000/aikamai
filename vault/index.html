@@ -103,33 +103,54 @@
   </div>
 </div>
 
-<script src="prompts.js"></script>
-<script src="prompts2.js"></script>
+<script src="vault-data.js"></script>
 <script>
-var ALL = PROMPTS.concat(EXTRA_PROMPTS);
+var ALL = null;
 (function(){
-  var HASHES = ["e2a04e289af195f9cd07f4a1bbc3e14fa92c6684988da8e1d6734ebcf85779b8","210dbe9be387270535a9ad58e71f32329e3d21d156873d2b9128642b671fac85","12d45a8fdbb6dcea23db2b22ab13adf7245ce8e457af3e7e6b39140dc8592e8a"];
-  function sha256(s){
-    return crypto.subtle.digest("SHA-256", new TextEncoder().encode(s)).then(function(b){
-      return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,"0");}).join("");
-    });
-  }
-  var given = new URLSearchParams(location.search).get("key");
+var given = new URLSearchParams(location.search).get("key");
   var saved = localStorage.getItem("ak_vault_key");
   var candidates = [];
   if (given) candidates.push(given.trim());
   if (saved) candidates.push(saved);
-  Promise.all(candidates.map(sha256)).then(function(hashes){
-    if (hashes.some(function(h){ return HASHES.indexOf(h) !== -1; })) {
-      if (given) localStorage.setItem("ak_vault_key", given.trim());
-      document.getElementById("app").style.display = "block";
-      initApp();
-    } else {
-      document.getElementById("lock").style.display = "flex";
-    }
-  });
-
-  function getProfile(){
+  function b64(s){ var bin = atob(s), u = new Uint8Array(bin.length); for (var i=0;i<bin.length;i++) u[i]=bin.charCodeAt(i); return u; }
+  function text(buf){ return new TextDecoder().decode(buf); }
+  function tryUnlock(cand){
+    return crypto.subtle.digest("SHA-256", new TextEncoder().encode(cand)).then(function(h){
+      return crypto.subtle.importKey("raw", h, {name:"AES-GCM"}, false, ["decrypt"]);
+    }).then(function(k){
+      var found = Promise.resolve(false);
+      VENC.wraps.forEach(function(w){
+        found = found.then(function(got){
+          if (got) return got;
+          return crypto.subtle.decrypt({name:"AES-GCM", iv:b64(w.iv)}, k, b64(w.ct))
+            .then(function(cek){ return crypto.subtle.importKey("raw", cek, {name:"AES-GCM"}, false, ["decrypt"]); })
+            .then(function(ck){ return crypto.subtle.decrypt({name:"AES-GCM", iv:b64(VENC.iv)}, ck, b64(VENC.ct)); })
+            .then(function(buf){
+              var o = (new Function(text(buf) + ";return {P:(typeof PROMPTS!=='undefined'?PROMPTS:[]),E:(typeof EXTRA_PROMPTS!=='undefined'?EXTRA_PROMPTS:[])};"))();
+              ALL = o.P.concat(o.E);
+              return true;
+            }).catch(function(){ return false; });
+        });
+      });
+      return found;
+    });
+  }
+  if (!candidates.length) {
+    document.getElementById("lock").style.display = "flex";
+  } else {
+    candidates.reduce(function(chain, cand){
+      return chain.then(function(ok){ return ok ? ok : tryUnlock(cand); });
+    }, Promise.resolve(false)).then(function(ok){
+      if (ok) {
+        if (given) localStorage.setItem("ak_vault_key", given.trim());
+        document.getElementById("app").style.display = "block";
+        initApp();
+      } else {
+        document.getElementById("lock").style.display = "flex";
+      }
+    }).catch(function(){ document.getElementById("lock").style.display = "flex"; });
+  }
+    function getProfile(){
     try { return JSON.parse(localStorage.getItem("ak_profile") || "null"); } catch(e){ return null; }
   }
   function personalize(text){
