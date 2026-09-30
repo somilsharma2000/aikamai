@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Kamai — Prompt Vault</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root{--bg:#0d0d12;--surface:#16161f;--surface2:#1e1e2a;--text:#f4f2ff;--muted:#a9a4c4;
+    --grad:linear-gradient(93deg,#7c3aed 0%,#d926a9 55%,#ff7a1a 100%);
+    --green:#21c45d;--border:rgba(255,255,255,.09)}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.6;overflow-x:clip;-webkit-text-size-adjust:100%}
+  .wrap{max-width:560px;margin:0 auto;padding:0 18px 80px}
+  h1{font-size:1.4rem;letter-spacing:-.02em}
+  .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .btn{display:inline-block;padding:14px 22px;border-radius:13px;font-weight:800;font-size:.98rem;text-decoration:none;color:#fff;background:var(--grad)}
+  .muted{color:var(--muted)}
+  /* lock screen */
+  .lock{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px}
+  .lock h1{font-size:1.6rem;margin-bottom:12px}
+  .lock p{max-width:420px;font-size:.95rem;margin-bottom:22px}
+  /* app */
+  header{padding:22px 0 14px}
+  .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+  .logo{font-weight:900;font-size:1.05rem}
+  .search{width:100%;padding:14px 16px;border-radius:13px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:1rem;margin-bottom:12px;outline:none}
+  .search:focus{border-color:#7c3aed}
+  .chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;-webkit-overflow-scrolling:touch}
+  .chip{flex:0 0 auto;padding:8px 14px;border-radius:999px;background:var(--surface);border:1px solid var(--border);color:var(--muted);font-size:.82rem;font-weight:700;cursor:pointer}
+  .chip.on{background:var(--grad);color:#fff;border-color:transparent}
+  .count{font-size:.8rem;color:var(--muted);margin:10px 0}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:15px;padding:16px;margin-bottom:14px}
+  .card .cat{font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#c084fc}
+  .card h3{font-size:1rem;margin:4px 0 8px}
+  .card p.pt{font-size:.88rem;color:var(--muted);white-space:pre-wrap}
+  .row{display:flex;gap:8px;margin-top:12px}
+  .act{flex:1;text-align:center;padding:10px;border-radius:10px;border:none;font-weight:800;font-size:.85rem;cursor:pointer}
+  .copy{background:var(--grad);color:#fff}
+  .wa{background:var(--surface2);color:var(--text);border:1px solid var(--border);text-decoration:none;display:block;line-height:2.4}
+  .toast{position:fixed;bottom:76px;left:50%;transform:translateX(-50%);background:#1e1e2a;border:1px solid var(--green);color:#fff;padding:10px 18px;border-radius:10px;font-size:.85rem;opacity:0;transition:opacity .3s;pointer-events:none}
+  .toast.show{opacity:1}
+  .foot{margin-top:20px;text-align:center;font-size:.75rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="lock" id="lock" style="display:none">
+  <div class="logo">AI <span class="grad-text">Kamai</span></div>
+  <h1>🔒 Prompt Vault</h1>
+  <p>Ye paid product hai (₹499, one-time, lifetime updates). Kharidne ke liye WhatsApp pe <b>"VAULT"</b> likh ke bhejo — UPI se payment ke turant baad access link mil jayega.</p>
+  <a class="btn" href="https://wa.me/917737077479?text=VAULT%20-%20mujhe%20Prompt%20Vault%20kharidna%20hai%20(%E2%82%B9499)">WhatsApp pe VAULT bhejo</a>
+  <p class="muted" style="font-size:.8rem;margin-top:16px">Free sample try karna hai? <a href="free.html" style="color:#c084fc">Yahan 10 prompts free hain →</a></p>
+</div>
+
+<div class="wrap" id="app" style="display:none">
+  <header>
+    <div class="top">
+      <div class="logo">🧠 Prompt <span class="grad-text">Vault</span></div>
+      <a class="wa" style="flex:0 0 auto;padding:8px 14px;border-radius:10px" href="https://wa.me/917737077479?text=VAULT%20-%20ek%20prompt%20request%20hai">Request</a>
+    </div>
+    <input class="search" id="q" type="search" placeholder="Search: client, reel, pricing, bug...">
+    <div class="chips" id="chips"></div>
+    <div class="count" id="count"></div>
+  </header>
+  <div id="list"></div>
+  <p class="foot">AI Kamai · lifetime updates · <a href="https://wa.me/917737077479" style="color:var(--muted)">support: WhatsApp</a></p>
+</div>
+<div class="toast" id="toast">Copy ho gaya ✓</div>
+
+<script src="prompts.js"></script>
+<script>
+(function(){
+  var HASHES = ["e2a04e289af195f9cd07f4a1bbc3e14fa92c6684988da8e1d6734ebcf85779b8","210dbe9be387270535a9ad58e71f32329e3d21d156873d2b9128642b671fac85","12d45a8fdbb6dcea23db2b22ab13adf7245ce8e457af3e7e6b39140dc8592e8a"];
+  function sha256(s){
+    return crypto.subtle.digest("SHA-256", new TextEncoder().encode(s)).then(function(b){
+      return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,"0");}).join("");
+    });
+  }
+  var given = new URLSearchParams(location.search).get("key");
+  var saved = localStorage.getItem("ak_vault_key");
+  var candidates = [];
+  if (given) candidates.push(given.trim());
+  if (saved) candidates.push(saved);
+  Promise.all(candidates.map(sha256)).then(function(hashes){
+    var ok = hashes.some(function(h){ return HASHES.indexOf(h) !== -1; });
+    if (ok) {
+      if (given) localStorage.setItem("ak_vault_key", given.trim());
+      document.getElementById("app").style.display = "block";
+      initApp();
+    } else {
+      document.getElementById("lock").style.display = "flex";
+    }
+  });
+
+  function initApp(){
+  var cats = [];
+  PROMPTS.forEach(function(p){ if (cats.indexOf(p.c) === -1) cats.push(p.c); });
+  var activeCat = "All";
+  var chipsEl = document.getElementById("chips");
+  function renderChips(){
+    var all = ["All"].concat(cats);
+    chipsEl.innerHTML = "";
+    all.forEach(function(c){
+      var b = document.createElement("button");
+      b.className = "chip" + (c === activeCat ? " on" : "");
+      b.textContent = c;
+      b.onclick = function(){ activeCat = c; renderChips(); render(); };
+      chipsEl.appendChild(b);
+    });
+  }
+  function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;"); }
+  function render(){
+    var q = document.getElementById("q").value.toLowerCase().trim();
+    var list = PROMPTS.filter(function(p){
+      if (activeCat !== "All" && p.c !== activeCat) return false;
+      if (q && (p.t + " " + p.p + " " + p.c).toLowerCase().indexOf(q) === -1) return false;
+      return true;
+    });
+    document.getElementById("count").textContent = list.length + " prompts";
+    var el = document.getElementById("list");
+    el.innerHTML = "";
+    list.forEach(function(p, i){
+      var d = document.createElement("div");
+      d.className = "card";
+      var waShare = "https://wa.me/?text=" + encodeURIComponent("*" + p.t + "* (AI Kamai Vault)\n\n" + p.p);
+      d.innerHTML = '<div class="cat">' + esc(p.c) + '</div><h3>' + esc(p.t) + '</h3><p class="pt">' + esc(p.p) + '</p>'
+        + '<div class="row"><button class="act copy" data-i="' + i + '">📋 Copy</button><a class="act wa" href="' + waShare + '" target="_blank" rel="noopener">📤 Share</a></div>';
+      d.querySelector(".copy").onclick = function(){
+        (navigator.clipboard ? navigator.clipboard.writeText(p.p) : Promise.reject()).then(function(){
+          toast();
+        }).catch(function(){
+          var ta = document.createElement("textarea");
+          ta.value = p.p; document.body.appendChild(ta); ta.select();
+          document.execCommand("copy"); document.body.removeChild(ta); toast();
+        });
+      };
+      el.appendChild(d);
+    });
+    if (!list.length) el.innerHTML = '<p class="muted" style="text-align:center;padding:30px 0">Kuch nahi mila. Dusra word try karo.</p>';
+  }
+  function toast(){
+    var t = document.getElementById("toast");
+    t.classList.add("show");
+    setTimeout(function(){ t.classList.remove("show"); }, 1400);
+  }
+  document.getElementById("q").addEventListener("input", render);
+  renderChips();
+  render();
+  }
+})();
+</script>
+</body>
+</html>
