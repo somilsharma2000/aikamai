@@ -1,11 +1,30 @@
 # AI Kamai
-> AI se kamai: AI aur vibe coding se paise kamane wale ke liye digital products, India-first (Hinglish). Built from scratch with AI, zero budget, build-in-public.
 
-AI Kamai is a creator brand selling three digital products, honest-claims only:
-- Prompt Vault (₹499): 200 categorized, searchable AI prompts in a web app (not a PDF). Profile auto-fill personalizes [niche]/[service]/[city]. Free sample: 10 best prompts, no payment.
-- Agency Launch Kit (₹999): Hinglish playbook to start an AI agency: 25 outreach scripts (DM/WhatsApp/email), objection bank, 12-niche directory, pricing calculator with India benchmarks, templates, 30-day action calendar, delivery system, legal & money basics.
-- SaaS Starter Kit (₹4,999): complete multi-tenant SaaS codebase (Next.js 14 + TypeScript + Prisma): auth, customers, invoices, UPI checkout (demo mode out of the box + Razorpay), WhatsApp notifications, 17 tests, full docs. Clone, run 2 commands, deploy in ~15 min.
+AI Kamai sells production-grade AI products to freelancers and solo builders in India. Founded and built by Somil Sharma. Everything sold is live and verifiable — no invented numbers, no fake testimonials.
 
 Store: https://somilsharma2000.github.io/aikamai/
-Contact: WhatsApp link on the store page.
-Policies: terms (https://somilsharma2000.github.io/aikamai/terms.html), privacy (https://somilsharma2000.github.io/aikamai/privacy.html), refund — 7-day no-questions (https://somilsharma2000.github.io/aikamai/refund.html).
+
+## Products (all live, one-time pricing, UPI, 7-day refund)
+
+- Prompt Vault (₹499): 200 curated AI prompts across 15 categories in a web app (not a PDF) — search, one-tap copy, personalized auto-fill (name/service/niche/city), favorites, lifetime updates. Prompts are written in natural Hinglish so output matches how Indian freelancers actually talk to clients.
+- Agency Launch Kit (₹999): complete agency operating system — 7-step playbook, 25 outreach scripts, objection bank, 12-niche client directory, pricing calculator with honest India benchmarks, delivery system, legal basics, 30-day action calendar.
+- SaaS Starter Kit (₹4,999): production-ready multi-tenant SaaS codebase — Next.js + TypeScript + Prisma, scrypt auth, UPI checkout with idempotent webhooks, WhatsApp notifications, 17 tests, full docs, 4-minute vertical swap guide. Private repo: somilsharma2000/aikamai-starter-kit.
+
+## Free sample
+
+10 of the 200 prompts, free, no signup: https://somilsharma2000.github.io/aikamai/vault/free.html
+
+## Trust policy
+
+Everything on the store is built by the founder and is publicly verifiable. Pricing is honest and one-time. Support is personal, on WhatsApp. Refunds: 7 days, no questions asked.
+
+## Policies
+
+Terms: https://somilsharma2000.github.io/aikamai/terms.html
+Privacy: https://somilsharma2000.github.io/aikamai/privacy.html
+Refund: https://somilsharma2000.github.io/aikamai/refund.html
+
+## Contact
+
+WhatsApp: https://wa.me/917737077479
+Instagram: @aikamai (coming)
