@@ -43,7 +43,7 @@ Fee-corrected target: 20 Agency Kits + 7 Starter Kits ≈ ₹51.6K net (Instamoj
 
 Built, tested, Pass-B'd, live-verified as of 1 Oct 2026:
 - Store v2: responsive composition (1→2→3 cols across 320-1440px), motion system (reveals w/ prefers-reduced-motion, hover lifts, focus rings), live-state copy, Starter Kit marked LIVE, Organization+Products+FAQPage JSON-LD, canonical, trust strip. 6 viewports zero overflow, 0 JS errors.
-- Vault v1.1: 177 prompts, 15 categories, search, favorites (localStorage), profile auto-fill (naam/service/niche/city → "Personalized" copy), SVG icons.
+- Vault v1.1: 200 prompts, 15 categories, search, favorites (localStorage), profile auto-fill (naam/service/niche/city → "Personalized" copy), SVG icons.
 - Kit v1.1: 10 tabs (playbook, scripts 25, objections 10, niches 12, pricing calculator + benchmarks, templates, delivery system, legal/money, 30-day calendar, AI Kamai case study).
 - Starter Kit v1.0.0: 15/15 vitest green, build clean, cross-tenant isolation verified, payment idempotency verified (double webhook cannot double-charge), vertical-swap dry run proven in under 4 min (gym example), delivery zip packaged.
 - 30 reel scripts ready (shoot-ready, honest-claims law applied; reels 28/30 ship ONLY with real buyers/numbers).
@@ -86,4 +86,8 @@ Built, tested, Pass-B'd, live-verified as of 1 Oct 2026:
 
 ALL product work runs the **Autonomous Product Transformation Engine**: DISCOVER→INSPECT→RESEARCH→DIAGNOSE→PRIORITIZE→DESIGN→IMPLEMENT→TEST→SELF-CRITIQUE→IMPROVE→RE-TEST. Act, don't report; fix before asking; report per cycle as FOUND/WHY/ACTION/VERIFICATION/REMAINING. Hard rules: zero-generic, 5-pass (FUNCTION→UX→VISUAL→ENGINEERING→CRITICAL REVIEW), one product at a time (Store→Free→Vault→Kit→Starter→ops→ecosystem), P0 before P3, no invented claims ever, distinguish VERIFIED FACT / INFERENCE / DESIGN JUDGMENT. Master audit standard: complete commercial operating system (~40 domains + recursive unknown-domain check) — full register in the owner's notes at company-master-plan/business-audit-universe/.
 
-Estate state after cycle 4: content AES-256-GCM encrypted (no plaintext in public repo; plaintext + build script archived at aikamai-starter-kit/content-archive/, PRIVATE), Terms/Privacy/Refund live + favicon + OG everywhere, all quantitative claims verified true (17 tests, 177 prompts, 15 categories, 25 scripts, 10 objections, 12 niches, 30-day calendar), health check 14/14, CRM Lead.source includes aikamai-ig / aikamai-store.
+Estate state after cycle 4: content AES-256-GCM encrypted (no plaintext in public repo; plaintext + build script archived at aikamai-starter-kit/content-archive/, PRIVATE), Terms/Privacy/Refund live + favicon + OG everywhere, all quantitative claims verified true (17 tests, 200 prompts, 15 categories, 25 scripts, 10 objections, 12 niches, 30-day calendar), health check 14/14, CRM Lead.source includes aikamai-ig / aikamai-store.
+
+## Estate v2 (1 Oct cycle 7)
+
+Vault + Kit are now FULL premium redesigns (store design language: dark, gradient, blur sticky bars, reveal motion w/ reduced-motion fallback, focus rings, typed-key unlock on lock screens). Vault: 200 prompts (23 new deep prompts), how-to-use guide, 15 category tips, 1/2/3-col grid. All claims say 200. Plaintext + build script in private content-archive. Grid law: 1fr tracks need minmax(0,1fr).
