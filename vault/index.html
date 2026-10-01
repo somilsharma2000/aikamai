@@ -32,7 +32,7 @@ body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,-ap
 #lock h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 #lock p{color:var(--muted);max-width:380px;margin:0 auto}
 .keybox{display:flex;gap:10px;max-width:380px;margin:22px auto 10px;width:100%}
-#keyIn{flex:1;background:var(--surface);border:1px solid var(--border-hi);border-radius:14px;color:var(--text);padding:14px 16px;font-size:1rem;font-family:inherit}
+#keyIn{flex:1;min-width:0;background:var(--surface);border:1px solid var(--border-hi);border-radius:14px;color:var(--text);padding:14px 16px;font-size:1rem;font-family:inherit}
 #keyIn::placeholder{color:var(--muted)}
 #goBtn{background:var(--grad);border:none;border-radius:14px;color:#03121a;font-weight:800;padding:14px 22px;font-size:.95rem;cursor:pointer;font-family:inherit}
 #goBtn:active{transform:scale(.97)}
@@ -132,6 +132,45 @@ details.guide[open] summary .arr{transform:rotate(180deg)}
   <div class="lockerr" id="lockErr"></div>
   <a class="lockalt" href="free.html">No key yet? Try 10 of these prompts free →</a>
   <div class="trust"><span>200 prompts</span><span>15 categories</span><span>Lifetime updates</span><span>7-day refund</span></div>
+<style>
+  .peek{width:100%;max-width:600px;text-align:left;margin-top:38px}
+  .peek h2{font-size:1.15rem;margin:0 0 4px;color:var(--text)}
+  .peek .ph{font-size:.85rem;color:var(--muted);margin-bottom:6px}
+  .peek .card{display:block;opacity:1;transform:none;background:var(--surface);border:1px solid var(--border);border-radius:15px;padding:16px;margin:14px 0}
+  .peek .cat{font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#22d3ee}
+  .peek h3{margin:4px 0 8px;font-size:1rem;color:var(--text)}
+  .peek .pt{font-size:.88rem;color:var(--muted);white-space:pre-wrap}
+  .peek .row{display:flex;gap:8px;margin-top:12px}
+  .peek .act{flex:1;text-align:center;padding:10px;border-radius:10px;border:none;font-weight:800;font-size:.82rem;cursor:pointer;background:var(--grad);color:#03121a}
+  .peek .note{font-size:.85rem;color:var(--muted);margin:16px 0 12px}
+  .peek .btn{display:inline-block;padding:14px 22px;border-radius:13px;font-weight:800;font-size:.95rem;text-decoration:none;color:#03121a;background:var(--grad)}
+</style>
+<script>
+(function(){
+  var S = [{"c": "Clients", "t": "Cold DM jisme reply aaye", "p": "Tu ek [niche] business ke owner ki taraf se ek Instagram cold DM likh de. Mera service: [service]. DM 3 line se chhoti ho, pehli line me unke kaam ki genuine tareef (specific, generic nahi), doosri line me unka ek exact problem jo maine unke profile se notice kiya, teesri line me ek soft question jo haan/na wala na ho. Bhai-bhai tone, corporate nahi. 3 versions banao."}, {"c": "Sales", "t": "Price bolne ka confidence", "p": "Mera service [service] hai aur main ₹[price] maangta hoon par himmat nahi hoti bolne me. Mujhe: (1) ek 2-line script jo main bole jab price puche — simple, number clear, excuse ke bina, (2) 3 jawab jo main du agar bole 'mehanga hai' — bina discount ke, (3) 1 line jo main khud bolu apne aap se price bolne se pehle. Practice karne layak, ratna nahi padega."}, {"c": "Money", "t": "Pehla ₹10K online", "p": "Mujhe is mahine online ₹10,000 kamne hain. Meri skills: [skills], available time: [hours/day], budget ₹0. Mujhe ek 30-day plan do: (1) sabse pehle kaunsa route (service > digital product > content — timing ke hisaab se), (2) day-wise milestones, (3) daily 2 actions jo main kar hi saku, (4) 'agar day 15 pe ₹0 hai to kya karna' — plan B. Honest — ₹10K mahine me possible hai par 'easy' nahi, wo bhi likho."}];
+  var wrap = document.createElement("div");
+  wrap.className = "peek";
+  var html = '<h2>What&rsquo;s inside</h2><p class="ph">Three prompts from the free sample — copy any of them right now:</p>';
+  S.forEach(function(p, i){
+    html += '<div class="card"><div class="cat">'+p.c+'</div><h3>'+p.t+'</h3><p class="pt">'+p.p+'</p>'
+      + '<div class="row"><button class="act" data-i="'+i+'">Copy</button></div></div>';
+  });
+  html += '<p class="note">These 3 are from the free 10. The full Vault has 200 prompts in 15 categories.</p>'
+    + '<a class="btn" href="https://wa.me/917737077479?text=VAULT%20-%20I%20want%20to%20buy%20the%20AI%20Prompt%20Vault%20(%E2%82%B9499)" target="_blank" rel="noopener">Get Instant Access — ₹499</a>';
+  wrap.innerHTML = html;
+  wrap.addEventListener("click", function(e){
+    var b = e.target.closest("button.act"); if(!b) return;
+    var p = S[+b.dataset.i].p;
+    (navigator.clipboard?navigator.clipboard.writeText(p):Promise.reject()).then(ok).catch(function(){
+      var ta=document.createElement("textarea");ta.value=p;document.body.appendChild(ta);ta.select();
+      document.execCommand("copy");document.body.removeChild(ta);ok();
+    });
+  });
+  function ok(){var t=document.getElementById("toast");t.classList.add("show");setTimeout(function(){t.classList.remove("show")},1400);}
+  var lock = document.getElementById("lock");
+  lock.appendChild(wrap);
+})();
+</script>
 </div>
 
 <div id="app">
