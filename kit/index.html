@@ -61,6 +61,33 @@
   .foot{margin-top:24px;text-align:center;font-size:.75rem;color:var(--muted)}
   .note{background:linear-gradient(93deg,rgba(124,58,237,.12),rgba(217,38,169,.12),rgba(255,122,26,.12));border:1px solid var(--border);border-radius:12px;padding:12px 14px;font-size:.82rem;margin:12px 0}
 
+  
+  /* ===== premium pass ===== */
+  :focus-visible{outline:2px solid #a78bfa;outline-offset:3px;border-radius:6px}
+  .mark{width:64px;height:64px;border-radius:18px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.6rem;color:#fff;margin:0 auto 16px;box-shadow:0 10px 40px rgba(124,58,237,.35)}
+  .lock h1{font-size:1.7rem;line-height:1.25;margin:8px 0}
+  .lock h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .keybox{display:flex;gap:10px;max-width:380px;margin:20px auto 10px;width:100%}
+  .keybox input{flex:1;background:var(--surface);border:1px solid rgba(255,255,255,.22);border-radius:14px;color:var(--text);padding:14px 16px;font-size:1rem;font-family:inherit}
+  .keybox input::placeholder{color:var(--muted)}
+  .keybox .btn{padding:14px 22px;font-size:.95rem;white-space:nowrap}
+  .keybox .btn:active{transform:scale(.97)}
+  .lockerr{color:#ff7a7a;font-size:.85rem;min-height:1.2em;margin:6px 0}
+  .lockalt{display:inline-block;margin-top:12px;color:var(--muted);font-size:.9rem;text-decoration:none;border-bottom:1px dashed rgba(255,255,255,.22)}
+  .lockalt:hover{color:var(--text)}
+  .trust{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:26px}
+  .trust span{font-size:.75rem;color:var(--muted);background:linear-gradient(93deg,rgba(124,58,237,.18),rgba(217,38,169,.18),rgba(255,122,26,.18));border:1px solid var(--border);border-radius:999px;padding:5px 12px}
+  .tabs{background:rgba(13,13,18,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);top:0;padding:12px 0;transition:border-color .2s}
+  .tab:hover{color:var(--text);border-color:rgba(255,255,255,.22)}
+  .tab:active{transform:scale(.96)}
+  .step,.card{transition:border-color .25s,transform .25s}
+  .step:hover,.card:hover{border-color:rgba(255,255,255,.22);transform:translateY(-2px)}
+  .act:active{transform:scale(.96)}
+  .iconbtn:hover{border-color:rgba(255,255,255,.22)}
+  section[data-s]{animation:akfade .45s ease}
+  @keyframes akfade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion: reduce){section[data-s]{animation:none}.step:hover,.card:hover{transform:none}.keybox .btn:active,.act:active,.tab:active{transform:none}}
+
   @media (min-width:900px){
     .wrap{max-width:880px;padding:0 24px 100px}
   }
@@ -68,10 +95,17 @@
 </head>
 <body>
 <div class="lock" id="lock" style="display:none">
+  <div class="mark">AK</div>
   <div class="logo">AI <span class="grad-text">Kamai</span></div>
   <h1>Agency Launch Kit</h1>
-  <p>Ye paid product hai (₹999, one-time). Kharidne ke liye WhatsApp pe <b>KIT</b> likh ke bhejo — UPI payment ke turant baad access link mil jayega.</p>
-  <a class="btn" href="https://wa.me/917737077479?text=KIT%20-%20mujhe%20Agency%20Launch%20Kit%20kharidna%20hai%20(%E2%82%B9999)">WhatsApp pe KIT bhejo</a>
+  <p>Paid product hai (₹999, one-time). Access link WhatsApp pe milta hai — yahan key paste karke seedha kholo.</p>
+  <div class="keybox">
+    <input id="keyIn" placeholder="Access key paste karo" autocomplete="off">
+    <button id="goBtn" class="btn">Kholo</button>
+  </div>
+  <div class="lockerr" id="lockErr"></div>
+  <a class="lockalt" href="https://wa.me/917737077479?text=KIT%20-%20mujhe%20Agency%20Launch%20Kit%20kharidna%20hai%20(%E2%82%B9999)">Key nahi hai? WhatsApp pe KIT likho — ₹999, UPI →</a>
+  <div class="trust"><span>10 sections</span><span>25 scripts</span><span>Lifetime updates</span><span>7-din refund</span></div>
 </div>
 
 <div class="wrap" id="app" style="display:none"><div class="toast" id="toast">Copy ho gaya</div>
@@ -212,6 +246,17 @@
       tabsEl.appendChild(b);
     });
   }
+window.akKitInit = initApp;
+  document.getElementById("goBtn").onclick = function(){
+    var v = document.getElementById("keyIn").value.trim();
+    if (!v) { document.getElementById("lockErr").textContent = "Key paste karo pehle."; return; }
+    document.getElementById("lockErr").textContent = "";
+    tryUnlock(v).then(function(ok){
+      if (ok) { localStorage.setItem("ak_kit_key", v); document.getElementById("lock").style.display = "none"; document.getElementById("app").style.display = "block"; initApp(); }
+      else { document.getElementById("lockErr").textContent = "Ye key match nahi hui — dobara check karke paste karo."; }
+    });
+  };
+  document.getElementById("keyIn").addEventListener("keydown", function(e){ if (e.key === "Enter") document.getElementById("goBtn").click(); });
 })();
 </script>
 </body>
