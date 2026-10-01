@@ -14,7 +14,7 @@ Revenue ladder (one-time prices, UPI, WhatsApp delivery):
 |---|---|---|---|
 | AI Prompt Vault | ₹499 | 177-prompt web app (search, 1-tap copy, profile auto-fill, favorites) | https://somilsharma2000.github.io/aikamai/vault/ |
 | AI Agency Launch Kit | ₹999 | 10-tab agency OS (25 scripts, objection bank, 12-niche directory, pricing calculator, 30-day calendar) | https://somilsharma2000.github.io/aikamai/kit/ |
-| SaaS Starter Kit | ₹4,999 | Production multi-tenant SaaS codebase (Next.js 14 + TS + Prisma, scrypt auth, UPI checkout, 15 tests, 5 docs). Private repo: somilsharma2000/aikamai-starter-kit, release v1.0.0 | delivered as zip from GitHub release |
+| SaaS Starter Kit | ₹9,999 | Production multi-tenant SaaS codebase (Next.js 15 + TS + Prisma; v2: self-serve signup, password reset w/ session invalidation, subscriptions, platform admin panel; UPI checkout, 34 tests, 9 docs). Private repo: somilsharma2000/aikamai-starter-kit, release v1.0.0 | delivered as zip from GitHub release |
 | Store (front door) | — | one-page store, all 3 products LIVE | https://somilsharma2000.github.io/aikamai/ |
 
 Free sample (funnel entry): https://somilsharma2000.github.io/aikamai/vault/free.html
@@ -34,7 +34,7 @@ Fee-corrected target: 20 Agency Kits + 7 Starter Kits ≈ ₹51.6K net (Instamoj
 ## 3. ARCHITECTURE / REPOS
 
 - **somilsharma2000/aikamai** (public, Pages from main, .nojekyll present) — store index.html, vault/ (index.html + prompts.js + prompts2.js + free.html), kit/index.html, og-image.png, robots.txt, sitemap.xml, llms.txt. Pure HTML/JS, zero framework, no build step. Vault + kit are SHA-256 key-gated (key via ?key= param or localStorage after first unlock).
-- **somilsharma2000/aikamai-starter-kit** (PRIVATE) — the ₹4,999 product. GitHub release v1.0.0 has the clean delivery zip (no .env/node_modules/dev.db). Access needs GITHUB_TOKEN env (already a stored secret in the agent workspace).
+- **somilsharma2000/aikamai-starter-kit** (PRIVATE) — the ₹9,999 product (v2, commit fdc6fed). GitHub release v1.0.0 has the clean delivery zip of v1 — CUT A NEW RELEASE for v2 before the next sale. Access needs GITHUB_TOKEN env (already a stored secret in the agent workspace).
 - **Access keys** (Vault/Kit unlock keys) are NOT written in public files. They live in the owner's private notes: `/app/notes/digital-product-launch/launch-runbook.md`. If you are a Base44 superagent for this owner, read them there.
 - **Ledger:** every real sale gets recorded in the `Sale` entity (gross/fees/net/source) of the owner's agent app. Buyer list/CRM: `Lead` + `LeadActivity` entities.
 - **Monitoring:** site-health-check skill (`bash /app/.agents/skills/site-health-check/run.sh`) checks 6 AI Kamai URLs — must stay 14/14.
