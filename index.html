@@ -76,6 +76,7 @@ header{padding:8px 0 26px}
 /* sections */
 section{padding:34px 0;border-top:1px solid var(--border)}
 .sub{color:var(--muted);font-size:.92rem;margin-bottom:20px}
+  .sub a{color:var(--cyan,var(--text));font-weight:600;text-decoration:underline;text-underline-offset:3px}
 .sub b{color:var(--text)}
 /* products */
 .products-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:20px}
@@ -124,8 +125,8 @@ footer .frow{margin-top:10px;display:flex;gap:16px;flex-wrap:wrap}
   <header class="top">
     <a class="logo" href="https://somilsharma2000.github.io/aikamai/">AI <b>Kamai</b> <span>·</span></a>
     <nav class="top-links">
+      <a href="#free">Free Sample</a>
       <a href="#products">Products</a>
-      <a href="vault/free.html">Free Sample</a>
       <a href="#faq">FAQ</a>
     </nav>
   </header>
@@ -133,7 +134,7 @@ footer .frow{margin-top:10px;display:flex;gap:16px;flex-wrap:wrap}
   <section class="hero" style="border-top:none;padding-top:20px">
     <span class="pill"><i></i>Built in the open — everything here is live right now</span>
     <h1>AI tools that<br><span class="grad-text">pay for themselves.</span></h1>
-    <p class="lead">I'm Somil Sharma. I built this entire store, the Prompt Vault, the Agency Kit, and a production SaaS codebase using AI — zero budget, from scratch. These are the exact systems behind my business, packaged for you.</p>
+    <p class="lead">Copy-paste prompts, client scripts and launch systems for Indian freelancers. Use them today to find clients, price your work and get paid. Built by me, Somil Sharma, and used in my own business.</p>
     <div class="cta-row">
       <a class="btn btn-grad" href="#products" data-ev="cta_hero_products">Browse Products</a>
       <a class="btn btn-ghost" href="vault/free.html" data-ev="cta_hero_free">Get 10 Prompts Free</a>
@@ -151,6 +152,15 @@ footer .frow{margin-top:10px;display:flex;gap:16px;flex-wrap:wrap}
     </div>
   </section>
 
+  <section id="free">
+    <span class="eyebrow">Free Sample</span>
+    <h2>Try before you buy.</h2>
+    <div class="band">
+      <p>My 10 best prompts, completely free. No signup, no payment — see the quality before you spend a rupee.</p>
+      <a class="btn btn-grad" href="https://wa.me/917737077479?text=SAMPLE%20-%20I%20want%20the%2010%20free%20AI%20Kamai%20prompts" target="_blank" rel="noopener" data-ev="cta_band_free">Get 10 Free Prompts</a>
+    </div>
+  </section>
+
   <section id="products">
     <span class="eyebrow">Products</span>
     <h2>One-time price. Instant access.</h2>
@@ -161,7 +171,7 @@ footer .frow{margin-top:10px;display:flex;gap:16px;flex-wrap:wrap}
         <span class="badge"><i></i>Live</span>
         <div class="name">AI Prompt Vault</div>
         <div class="price">₹499 <small>one-time</small></div>
-        <p class="desc">200 curated AI prompts across 15 categories — client acquisition, content, coding, research, pricing, and more. A searchable web app, not a PDF.</p>
+        <p class="desc">Stop staring at a blank ChatGPT box. Pick a prompt, fill in your niche, send it to a client the same day.</p>
         <ul>
           <li>Search, one-tap copy, favorites</li>
           <li>Personalized auto-fill for your niche and city</li>
@@ -176,7 +186,7 @@ footer .frow{margin-top:10px;display:flex;gap:16px;flex-wrap:wrap}
         <span class="badge"><i></i>Live</span>
         <div class="name">AI Agency Launch Kit</div>
         <div class="price">₹999 <small>one-time</small></div>
-        <p class="desc">A complete agency operating system: the 7-step playbook, 25 outreach scripts, an objection bank, a 12-niche client directory, a pricing engine, and a 30-day action calendar.</p>
+        <p class="desc">Everything to land your first agency client: 25 scripts to send, answers to 'mehanga hai', and a 30-day plan.</p>
         <ul>
           <li>25 ready-to-send scripts (Hinglish, India-ready)</li>
           <li>Objection bank — 10 answers that close</li>
@@ -191,7 +201,7 @@ footer .frow{margin-top:10px;display:flex;gap:16px;flex-wrap:wrap}
         <span class="badge"><i></i>Live</span>
         <div class="name">SaaS Starter Kit</div>
         <div class="price">₹4,999 <small>one-time</small></div>
-        <p class="desc">My real production SaaS codebase — Next.js + TypeScript + Prisma: authentication, customers, invoices, UPI checkout, WhatsApp notifications, multi-tenancy. Clone it, launch your own SaaS.</p>
+        <p class="desc">The real codebase behind my own SaaS. For builders who already know the basics and want to launch their own product.</p>
         <ul>
           <li>Clean production stack, built from scratch</li>
           <li>UPI checkout out of the box (demo + Razorpay)</li>
@@ -203,15 +213,7 @@ footer .frow{margin-top:10px;display:flex;gap:16px;flex-wrap:wrap}
       </div>
 
     </div>
-  </section>
-
-  <section>
-    <span class="eyebrow">Free Sample</span>
-    <h2>Try before you buy.</h2>
-    <div class="band">
-      <p>My 10 best prompts, completely free. No signup, no payment — see the quality before you spend a rupee.</p>
-      <a class="btn btn-grad" href="https://wa.me/917737077479?text=SAMPLE%20-%20I%20want%20the%2010%20free%20AI%20Kamai%20prompts" target="_blank" rel="noopener" data-ev="cta_band_free">Get 10 Free Prompts</a>
-    </div>
+    <p class="sub" style="text-align:center;margin-top:24px;margin-bottom:0">Not sure which one fits you? <a href="https://wa.me/917737077479?text=Hi%20Somil%2C%20which%20AI%20Kamai%20product%20fits%20me%3F" target="_blank" rel="noopener">Message me on WhatsApp</a> and I'll tell you honestly.</p>
   </section>
 
   <section id="faq">
