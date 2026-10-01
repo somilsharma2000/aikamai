@@ -8,7 +8,7 @@ Store: https://somilsharma2000.github.io/aikamai/
 
 - Prompt Vault (₹499): 200 curated AI prompts across 15 categories in a web app (not a PDF) — search, one-tap copy, personalized auto-fill (name/service/niche/city), favorites, lifetime updates. Prompts are written in natural Hinglish so output matches how Indian freelancers actually talk to clients.
 - Agency Launch Kit (₹999): complete agency operating system — 7-step playbook, 25 outreach scripts, objection bank, 12-niche client directory, pricing calculator with honest India benchmarks, delivery system, legal basics, 30-day action calendar.
-- SaaS Starter Kit (₹9,999): production-ready multi-tenant SaaS codebase — Next.js + TypeScript + Prisma, self-serve signup, password reset (single-use links, session invalidation), subscriptions with honest renewal math, platform admin panel (all tenants, pause control), scrypt auth, UPI checkout with idempotent webhooks, WhatsApp + mail adapters, 34 tests, full docs, 4-minute vertical swap guide. Private repo: somilsharma2000/aikamai-starter-kit.
+- SaaS Starter Kit (₹9,999): production-ready multi-tenant SaaS codebase — Next.js + TypeScript + Prisma, self-serve signup, password reset (single-use links, session invalidation), subscriptions with honest renewal math, platform admin panel with analytics (MRR, revenue + signup charts, all tenants, pause control), scrypt auth, UPI checkout with idempotent webhooks, WhatsApp + mail adapters, 40 tests, full docs, 4-minute vertical swap guide. Private repo: somilsharma2000/aikamai-starter-kit.
 
 ## Free sample
 
