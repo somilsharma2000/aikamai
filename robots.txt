@@ -1,6 +1,8 @@
 User-agent: *
 Allow: /
 Disallow: /kit/
+Disallow: /vault/
+Allow: /vault/free.html
 
 # AI crawlers explicitly welcome
 User-agent: GPTBot
