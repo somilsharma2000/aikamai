@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Prompt Vault — 200 AI Prompts | AI Kamai</title>
-<meta name="description" content="200 curated AI prompts, 15 categories, Hinglish — search, one-tap copy, personalized auto-fill, favorites. A web app, not a PDF.">
+<meta name="description" content="200 curated AI prompts across 15 categories. A searchable web app with one-tap copy, personalized auto-fill and favorites. Not a PDF.">
 <link rel="canonical" href="https://somilsharma2000.github.io/aikamai/vault/">
 <meta name="robots" content="noindex">
 <meta property="og:title" content="AI Prompt Vault — AI Kamai">
@@ -14,27 +14,27 @@
 <meta name="twitter:card" content="summary_large_image">
 <style>
 :root{
-  --bg:#0d0d12; --surface:#16161f; --surface2:#1e1e2a;
-  --text:#f4f2ff; --muted:#a9a4c4;
-  --grad:linear-gradient(93deg,#7c3aed 0%,#d926a9 55%,#ff7a1a 100%);
+  --bg:#04060b; --surface:#0a0d16; --surface2:#10141f;
+  --text:#e8edf5; --muted:#8b94a8;
+  --grad:linear-gradient(93deg,#22d3ee 0%,#3b82f6 100%);
   --grad-soft:linear-gradient(93deg,rgba(124,58,237,.18),rgba(217,38,169,.18),rgba(255,122,26,.18));
-  --green:#21c45d; --border:rgba(255,255,255,.09); --border-hi:rgba(255,255,255,.22);
+  --green:#21c45d; --border:rgba(148,163,184,.13); --border-hi:rgba(148,163,184,.32);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.6;overflow-x:clip}
-:focus-visible{outline:2px solid #a78bfa;outline-offset:3px;border-radius:6px}
+:focus-visible{outline:2px solid #22d3ee;outline-offset:3px;border-radius:6px}
 .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
 /* ===== LOCK ===== */
 #lock{display:none;min-height:100vh;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center}
-.mark{width:64px;height:64px;border-radius:18px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.6rem;color:#fff;margin:0 auto 18px;box-shadow:0 10px 40px rgba(124,58,237,.35)}
+.mark{width:64px;height:64px;border-radius:18px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.6rem;color:#fff;margin:0 auto 18px;box-shadow:0 10px 40px rgba(34,211,238,.25)}
 #lock h1{font-size:1.7rem;line-height:1.25;margin-bottom:8px}
 #lock h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 #lock p{color:var(--muted);max-width:380px;margin:0 auto}
 .keybox{display:flex;gap:10px;max-width:380px;margin:22px auto 10px;width:100%}
 #keyIn{flex:1;background:var(--surface);border:1px solid var(--border-hi);border-radius:14px;color:var(--text);padding:14px 16px;font-size:1rem;font-family:inherit}
 #keyIn::placeholder{color:var(--muted)}
-#goBtn{background:var(--grad);border:none;border-radius:14px;color:#fff;font-weight:800;padding:14px 22px;font-size:.95rem;cursor:pointer;font-family:inherit}
+#goBtn{background:var(--grad);border:none;border-radius:14px;color:#03121a;font-weight:800;padding:14px 22px;font-size:.95rem;cursor:pointer;font-family:inherit}
 #goBtn:active{transform:scale(.97)}
 .lockerr{color:#ff7a7a;font-size:.85rem;min-height:1.2em;margin:6px 0}
 .lockalt{display:inline-block;margin-top:14px;color:var(--muted);font-size:.9rem;text-decoration:none;border-bottom:1px dashed var(--border-hi)}
@@ -43,18 +43,18 @@ body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,-ap
 .trust span{font-size:.75rem;color:var(--muted);background:var(--grad-soft);border:1px solid var(--border);border-radius:999px;padding:5px 12px}
 /* ===== APP ===== */
 #app{display:none;padding-bottom:90px}
-header.apph{position:sticky;top:0;z-index:50;background:rgba(13,13,18,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+header.apph{position:sticky;top:0;z-index:50;background:rgba(4,6,11,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
 .hrow{max-width:1100px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);min-width:0}
 .brand span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.brand .mark{width:38px;height:38px;border-radius:12px;font-size:.95rem;margin:0;box-shadow:0 6px 20px rgba(124,58,237,.3)}
+.brand .mark{width:38px;height:38px;border-radius:12px;font-size:.95rem;margin:0;box-shadow:0 6px 20px rgba(34,211,238,.22)}
 .brand b{font-size:1rem;line-height:1.2;display:block}
 .brand small{color:var(--muted);font-size:.72rem}
 .count{font-size:.72rem;font-weight:700;background:var(--grad-soft);border:1px solid var(--border);border-radius:999px;padding:6px 12px;color:var(--text);white-space:normal;max-width:150px;text-align:right;line-height:1.35}
 .sbar{max-width:1100px;margin:0 auto;padding:0 20px 12px;display:flex;gap:10px;align-items:center}
 .sbox{flex:1;position:relative}
 #q{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:13px;color:var(--text);padding:13px 16px 13px 42px;font-size:.95rem;font-family:inherit}
-#q:focus{border-color:var(--border-hi);outline:none;box-shadow:0 0 0 3px rgba(124,58,237,.25)}
+#q:focus{border-color:var(--border-hi);outline:none;box-shadow:0 0 0 3px rgba(34,211,238,.25)}
 #q::placeholder{color:var(--muted)}
 .sbox svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:16px;height:16px;stroke:var(--muted);fill:none;stroke-width:2}
 .ghost{background:var(--surface2);border:1px solid var(--border);color:var(--text);border-radius:13px;padding:12px 16px;font-weight:700;font-size:.85rem;cursor:pointer;font-family:inherit;white-space:nowrap}
@@ -63,8 +63,8 @@ header.apph{position:sticky;top:0;z-index:50;background:rgba(13,13,18,.86);backd
 .chipbar::-webkit-scrollbar{display:none}
 .chip{flex-shrink:0;background:var(--surface2);border:1px solid var(--border);border-radius:999px;color:var(--muted);font-size:.8rem;font-weight:700;padding:8px 14px;cursor:pointer;font-family:inherit;transition:all .2s}
 .chip:hover{color:var(--text);border-color:var(--border-hi)}
-.chip.on{background:var(--grad);border-color:transparent;color:#fff}
-#tipbox{display:none;max-width:1100px;margin:0 auto 18px;padding:12px 16px;border-left:3px solid;border-image:linear-gradient(93deg,#7c3aed,#ff7a1a) 1;background:var(--surface);border-radius:0 12px 12px 0;font-size:.88rem;color:var(--muted)}
+.chip.on{background:var(--grad);border-color:transparent;color:#03121a}
+#tipbox{display:none;max-width:1100px;margin:0 auto 18px;padding:12px 16px;border-left:3px solid;border-image:linear-gradient(93deg,#22d3ee,#3b82f6) 1;background:var(--surface);border-radius:0 12px 12px 0;font-size:.88rem;color:var(--muted)}
 #tipbox b{color:var(--text)}
 /* guide */
 details.guide{max-width:1100px;margin:0 auto 20px;background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden}
@@ -89,9 +89,9 @@ details.guide[open] summary .arr{transform:rotate(180deg)}
 .card h3{font-size:1rem;line-height:1.3;margin-bottom:6px}
 .pt{font-size:.85rem;color:var(--muted);white-space:pre-wrap;overflow-wrap:anywhere}
 .row{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
-.act{display:inline-flex;align-items:center;gap:7px;background:var(--grad);border:none;border-radius:11px;color:#fff;font-weight:800;font-size:.8rem;padding:9px 15px;cursor:pointer;font-family:inherit;text-decoration:none;transition:transform .15s}
+.act{display:inline-flex;align-items:center;gap:7px;background:var(--grad);border:none;border-radius:11px;color:#03121a;font-weight:800;font-size:.8rem;padding:9px 15px;cursor:pointer;font-family:inherit;text-decoration:none;transition:transform .15s}
 .act:active{transform:scale(.96)}
-.act svg{width:14px;height:14px;stroke:#fff;fill:none;stroke-width:2}
+.act svg{width:14px;height:14px;stroke:#03121a;fill:none;stroke-width:2}
 .act.ghostb{background:var(--surface2);border:1px solid var(--border);color:var(--text)}
 .act.ghostb svg{stroke:var(--muted)}
 .act.ghostb:hover{border-color:var(--border-hi)}
@@ -124,14 +124,14 @@ details.guide[open] summary .arr{transform:rotate(180deg)}
 <div id="lock">
   <div class="mark">AK</div>
   <h1><span>AI Prompt Vault</span></h1>
-  <p>200 prompts, 15 categories, Hinglish. Search + one-tap copy + personalized auto-fill. Ek baar khula to phone yaad rakh lega.</p>
+  <p>200 curated AI prompts across 15 categories. Search, one-tap copy, personalized auto-fill. Your device remembers the key — no re-entry needed.</p>
   <div class="keybox">
-    <input id="keyIn" placeholder="Access key paste karo" autocomplete="off">
-    <button id="goBtn">Kholo</button>
+    <input id="keyIn" placeholder="Enter your access key" autocomplete="off">
+    <button id="goBtn">Unlock</button>
   </div>
   <div class="lockerr" id="lockErr"></div>
-  <a class="lockalt" href="free.html">Key nahi hai? 10 best prompts free me dekho →</a>
-  <div class="trust"><span>200 prompts</span><span>15 categories</span><span>Lifetime updates</span><span>7-din refund</span></div>
+  <a class="lockalt" href="free.html">No key yet? Try 10 of these prompts free →</a>
+  <div class="trust"><span>200 prompts</span><span>15 categories</span><span>Lifetime updates</span><span>7-day refund</span></div>
 </div>
 
 <div id="app">
@@ -155,14 +155,14 @@ details.guide[open] summary .arr{transform:rotate(180deg)}
   <main class="wrap" style="padding-bottom:0">
     <div id="tipbox"></div>
     <details class="guide">
-      <summary>Pehli baar? 30 second me samjho <span class="arr">▾</span></summary>
+      <summary>First time here? A 30-second guide <span class="arr">▾</span></summary>
       <div class="gbody">
         <ol>
-          <li><b>Profile bharo</b> (upar Profile button) — naam, service, niche, city. Phir har prompt ka <b>Personalized</b> button [niche]/[service]/[city] khud bhar dega.</li>
-          <li><b>Search karo</b> jaisa kaam ho: 'client', 'pricing', 'reel', 'bug'. 200 prompts me se sahi wala 2 second me.</li>
-          <li><b>Copy karo</b>, apne context ke [brackets] bharo, aur ChatGPT/Claude/Gemini me paste. Jawab ko apne shabdon me edit karo — template awaaz nahi, teri awaaz chahiye.</li>
-          <li><b>Star karo</b> jo prompts roz kaam aate hain — Favorites chip me sab ek jagah.</li>
-          <li>Naye prompts add hote rahenge — <b>lifetime updates</b>, link wahi rahega.</li>
+          <li><b>Set your profile</b> (Profile button, top right) — your name, service, niche and city. The <b>Personalized</b> button on every prompt auto-fills [niche], [service] and [city] for you.</li>
+          <li><b>Search</b> for the task at hand: "client", "pricing", "reel", "bug". The right prompt surfaces in seconds.</li>
+          <li><b>Copy</b>, fill in the remaining [brackets] with your context, and paste into ChatGPT, Claude or Gemini. Then rewrite the output in your own voice — that's what makes it yours.</li>
+          <li><b>Star</b> the prompts you use daily — the Favorites chip keeps them one tap away.</li>
+          <li>New prompts are added regularly — <b>lifetime updates</b>, same link, no extra cost.</li>
         </ol>
       </div>
     </details>
@@ -172,11 +172,11 @@ details.guide[open] summary .arr{transform:rotate(180deg)}
 
 <div class="modal" id="pmodal" role="dialog" aria-label="Profile">
   <div class="mbox">
-    <h3>Apna profile bharo</h3>
-    <p>Ek baar bharo — Personalized button har prompt me [niche], [service], [city], naam khud bhar dega. Data sirf tumhare phone me.</p>
-    <label for="f_name">Naam</label><input id="f_name" placeholder="Somil">
-    <label for="f_service">Tum kya bechte ho / karte ho</label><input id="f_service" placeholder="AI automation service">
-    <label for="f_niche">Client ka niche / audience</label><input id="f_niche" placeholder="gym owners">
+    <h3>Set your profile</h3>
+    <p>Fill this once — the Personalized button auto-fills [niche], [service], [city] and your name on every prompt. Stored only on your device, never sent anywhere.</p>
+    <label for="f_name">Your name</label><input id="f_name" placeholder="Somil">
+    <label for="f_service">What you sell / do</label><input id="f_service" placeholder="AI automation services">
+    <label for="f_niche">Client niche / audience</label><input id="f_niche" placeholder="gym owners">
     <label for="f_city">City</label><input id="f_city" placeholder="Indore">
     <div class="mrow">
       <button class="act ghostb" id="pCancel">Cancel</button>
@@ -185,12 +185,12 @@ details.guide[open] summary .arr{transform:rotate(180deg)}
   </div>
 </div>
 
-<div id="toast">Copy ho gaya ✓</div>
+<div id="toast">Copied ✓</div>
 
 <script src="vault-data.js"></script>
 <script>
 var ALL = null;
-var TIPS = {"Clients":"Client ka kaam shuru karne se PEHLE onboarding questionnaire prompt bharo — aadhi dikkat wahi khatam hoti hai.","Content":"Ek post ko 3 formats me try karo (reel script, carousel, tweet) — ek idea se 3 content.","Building":"Bug aaye to 'Bug triage' prompt me pura error + code paste karo, sirf last line nahi.","Research":"Koi bhi bada kaam shuru karne se pehle validation prompts chalao — 10 logon se sach sun lo, guess nahi.","Sales":"Discovery call ke prompts ko apne shabdon me padho, ratne ka nahi — natural lagna trust banata hai.","Ops":"Files ka naam din-wise rakho: 2026-10-01_Client_Project_v1 — 6 mahine baad bhi sab milega.","Brand":"Brand prompts ka output apne 2-3 line ke signature phrases me edit karo — template awaaz viral nahi hoti.","Money":"Har payment ka 25% alag account me daalo — tax ka tension 90% khatam.","Video":"Pehli 2 second me hook nahi to baaki sab bekaar — title prompt pehle, phir script.","Data":"Data prompt ke output ko hamesha ek line me verify karwao ('ye number kahan se aaya?') — AI galtiyan data me sabse mehngi hoti hain.","Ecom":"Product listing ke prompts me apne real specs hi daalo — guess ki specs refund laati hain.","Writing":"Likhe hue ko apne tone me ek baar padh ke badlo — AI ka draft teri awaaz me bolna chahiye.","Team":"Delegation prompts me deadline + 'kaise dikhega success' likhna mat bhulo — warna dobara khud karna padega.","Learning":"30-din plan banane ke baad Week 1 ka checklist aaj hi start karo — plan banana seekhna nahi hai.","Tools":"Tool setup prompts me apna exact stack batao (Windows/Mac, budget) — general jawab time waste hai."};
+var TIPS = {"Clients": "Run the onboarding questionnaire prompt BEFORE starting any client work — half of all problems end there.", "Content": "Turn one idea into three formats (reel script, carousel, post) — one idea, three pieces of content.", "Building": "When a bug appears, paste the full error plus the code into the Bug Triage prompt — not just the last line.", "Research": "Run the validation prompts before starting any big build — hear the truth from ten real people instead of guessing.", "Sales": "Read discovery-call prompts in your own words, don't memorize them — sounding natural builds trust.", "Ops": "Name files by date: 2026-10-01_Client_Project_v1 — everything stays findable six months later.", "Brand": "Edit brand-prompt output into your own two or three signature phrases — template voices don't go viral.", "Money": "Move 25% of every payment to a separate account — this one habit removes 90% of tax stress.", "Video": "If the first two seconds don't hook, nothing after them matters — run the title prompt before the script.", "Data": "Always verify data-prompt output with one question: where did this number come from? AI mistakes are costliest in data.", "Ecom": "Put your real product specs into listing prompts — guessed specs lead to returns.", "Writing": "Read every AI draft aloud and edit it into your own tone — the draft should sound like you.", "Team": "Never omit the deadline and the definition of success in delegation prompts — or you will redo the work yourself.", "Learning": "After building your 30-day plan, start the Week 1 checklist today — planning is not the skill.", "Tools": "Give tool-setup prompts your exact stack and budget — generic answers waste your time."};
 (function(){
   var given = new URLSearchParams(location.search).get("key");
   var saved = localStorage.getItem("ak_vault_key");
@@ -237,11 +237,11 @@ var TIPS = {"Clients":"Client ka kaam shuru karne se PEHLE onboarding questionna
   }
   document.getElementById("goBtn").onclick = function(){
     var v = document.getElementById("keyIn").value.trim();
-    if (!v) { document.getElementById("lockErr").textContent = "Key paste karo pehle."; return; }
+    if (!v) { document.getElementById("lockErr").textContent = "Enter your access key first."; return; }
     document.getElementById("lockErr").textContent = "";
     tryUnlock(v).then(function(ok){
       if (ok) { localStorage.setItem("ak_vault_key", v); document.getElementById("lock").style.display = "none"; document.getElementById("app").style.display = "block"; initApp(); }
-      else { document.getElementById("lockErr").textContent = "Ye key match nahi hui — check karke dobara paste karo. Koi dikkat ho to WhatsApp karo."; }
+      else { document.getElementById("lockErr").textContent = "That key doesn't match — check it and paste again. Any trouble, message me on WhatsApp."; }
     });
   };
   document.getElementById("keyIn").addEventListener("keydown", function(e){ if (e.key === "Enter") document.getElementById("goBtn").click(); });
@@ -274,7 +274,7 @@ var TIPS = {"Clients":"Client ka kaam shuru karne se PEHLE onboarding questionna
     var qEl = document.getElementById("q");
     document.getElementById("countBadge").textContent = ALL.length + " prompts · " + cats.length + " categories";
 
-    var waShare = "https://wa.me/?text=" + encodeURIComponent("AI Prompt Vault (200 prompts, Hinglish) — ₹499: https://somilsharma2000.github.io/aikamai/");
+    var waShare = "https://wa.me/?text=" + encodeURIComponent("AI Prompt Vault — 200 AI prompts (₹499): https://somilsharma2000.github.io/aikamai/");
 
     function renderChips(){
       chipsEl.innerHTML = "";
@@ -350,7 +350,7 @@ var TIPS = {"Clients":"Client ka kaam shuru karne se PEHLE onboarding questionna
         body.appendChild(row);
         listEl.appendChild(d);
       });
-      if (!list.length) listEl.innerHTML = '<p class="empty">Kuch nahi mila. Dusra word try karo.</p>';
+      if (!list.length) listEl.innerHTML = '<p class="empty">Nothing found. Try a different word.</p>';
     }
     qEl.addEventListener("input", render);
 
@@ -385,5 +385,31 @@ var TIPS = {"Clients":"Client ka kaam shuru karne se PEHLE onboarding questionna
   }
 })();
 </script>
+<script>
+/* AI Kamai analytics — anonymous, coarse, self-disabling when unavailable */
+(function(){
+  try {
+    if (sessionStorage.getItem("ak_analytics_off")) return;
+    var page = (location.pathname.indexOf("vault/free") > -1 ? "free" :
+                location.pathname.indexOf("vault") > -1 ? "vault" :
+                location.pathname.indexOf("kit") > -1 ? "kit" :
+                location.pathname.indexOf("starter") > -1 ? "starter" : "store");
+    var ref = "direct";
+    try { ref = location.hostname === document.referrer.split("/")[2] ? "internal" : (document.referrer ? new URL(document.referrer).hostname : "direct"); } catch(e){}
+    function send(ev){
+      fetch("https://beyond.base44.app/functions/logEvent", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ page: page, ev: ev, ref: ref })
+      }).catch(function(){ sessionStorage.setItem("ak_analytics_off", "1"); });
+    }
+    send("view");
+    document.addEventListener("click", function(e){
+      var t = e.target.closest("[data-ev]");
+      if (t) send(t.getAttribute("data-ev"));
+    }, true);
+  } catch(e){}
+})();
+</script>
+
 </body>
 </html>
