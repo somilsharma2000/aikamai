@@ -68,7 +68,7 @@
   .lock h1{font-size:1.7rem;line-height:1.25;margin:8px 0}
   .lock h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
   .keybox{display:flex;gap:10px;max-width:380px;margin:20px auto 10px;width:100%}
-  .keybox input{flex:1;background:var(--surface);border:1px solid rgba(255,255,255,.22);border-radius:14px;color:var(--text);padding:14px 16px;font-size:1rem;font-family:inherit}
+  .keybox input{flex:1;min-width:0;background:var(--surface);border:1px solid rgba(255,255,255,.22);border-radius:14px;color:var(--text);padding:14px 16px;font-size:1rem;font-family:inherit}
   .keybox input::placeholder{color:var(--muted)}
   .keybox .btn{padding:14px 22px;font-size:.95rem;white-space:nowrap}
   .keybox .btn:active{transform:scale(.97)}
@@ -106,6 +106,32 @@
   <div class="lockerr" id="lockErr"></div>
   <a class="lockalt" href="https://wa.me/917737077479?text=KIT%20-%20I%20want%20to%20buy%20the%20Agency%20Launch%20Kit%20(%E2%82%B9999)">No key yet? Message "KIT" on WhatsApp — ₹999, UPI →</a>
   <div class="trust"><span>10 sections</span><span>25 scripts</span><span>Lifetime updates</span><span>7-day refund</span></div>
+<style>
+  .peek{width:100%;max-width:600px;text-align:left;margin-top:38px}
+  .peek h2{font-size:1.15rem;margin:0 0 10px;color:var(--text)}
+  .peek ol{padding-left:20px;margin:0}
+  .peek li{font-size:.92rem;color:var(--muted);margin-bottom:8px}
+  .peek li b{color:var(--text)}
+  .peek .note{font-size:.85rem;color:var(--muted);margin:16px 0 12px}
+  .peek .btn{display:inline-block;padding:14px 22px;border-radius:13px;font-weight:800;font-size:.95rem;text-decoration:none;color:#03121a;background:var(--grad)}
+</style>
+<div class="peek">
+  <h2>What&rsquo;s inside</h2>
+  <ol>
+    <li><b>Playbook</b></li>
+    <li><b>Scripts</b></li>
+    <li><b>Objections</b></li>
+    <li><b>Niches</b></li>
+    <li><b>Pricing</b></li>
+    <li><b>Templates</b></li>
+    <li><b>30 Days</b></li>
+    <li><b>Delivery</b></li>
+    <li><b>Legal</b></li>
+    <li><b>Case Study</b></li>
+  </ol>
+  <p class="note">25 ready-to-send scripts, a pricing calculator and a 30-day plan.</p>
+  <a class="btn" href="https://wa.me/917737077479?text=KIT%20-%20I%20want%20to%20buy%20the%20Agency%20Launch%20Kit%20(%E2%82%B9999)" target="_blank" rel="noopener">Get Instant Access — ₹999</a>
+</div>
 </div>
 
 <div class="wrap" id="app" style="display:none"><div class="toast" id="toast">Copied</div>
