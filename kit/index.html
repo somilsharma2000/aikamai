@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -104,7 +104,7 @@
     <button id="goBtn" class="btn">Unlock</button>
   </div>
   <div class="lockerr" id="lockErr"></div>
-  <a class="lockalt" href="https://wa.me/917737077479?text=KIT%20-%20mujhe%20Agency%20Launch%20Kit%20kharidna%20hai%20(%E2%82%B9999)">No key yet? Message "KIT" on WhatsApp — ₹999, UPI →</a>
+  <a class="lockalt" href="https://wa.me/917737077479?text=KIT%20-%20I%20want%20to%20buy%20the%20Agency%20Launch%20Kit%20(%E2%82%B9999)">No key yet? Message "KIT" on WhatsApp — ₹999, UPI →</a>
   <div class="trust"><span>10 sections</span><span>25 scripts</span><span>Lifetime updates</span><span>7-day refund</span></div>
 </div>
 
@@ -196,11 +196,11 @@
       var hours = parseFloat(document.getElementById("hours").value);
       var oh = parseFloat(document.getElementById("overhead").value);
       if (!isFinite(goal) || goal <= 0) {
-        document.getElementById("calcOut").innerHTML = "Pehle apna monthly goal daalo (0 se zyada) — phir rate nikalenge.";
+        document.getElementById("calcOut").innerHTML = "Enter your monthly goal first (above 0) — then we can work out your rate.";
         return;
       }
       if (!isFinite(hours) || hours <= 0) {
-        document.getElementById("calcOut").innerHTML = "Hafte me kitne ghante kaam karoge, wo daalo (1-100).";
+        document.getElementById("calcOut").innerHTML = "Enter your weekly working hours (1-100).";
         return;
       }
       hours = Math.min(hours, 100);
@@ -211,9 +211,9 @@
       var clients = Math.min(Math.ceil(goal / perClient), 99);
       var goalShow = goal > 999999 ? (goal/100000).toFixed(0) + " lakh" : Math.round(goal).toLocaleString("en-IN");
       document.getElementById("calcOut").innerHTML =
-        "Tujhe <b>₹"+rate+"/ghanta</b> charge karna chahiye (billable ~"+billable.toFixed(0)+" ghante/mahina).<br>" +
-        "Ek client <b>₹"+Math.round(perClient)+"</b>/mahina ka retainer => <b>"+clients+"</b> client(s) = ₹"+goalShow+" goal.<br>" +
-        "Chhota project (8-12 ghante): <b>₹"+rate*8+"</b> se ₹"+rate*12+" range.";
+        "You should charge <b>₹"+rate+"/hour</b> (billable ~"+billable.toFixed(0)+" hrs/month).<br>" +
+        "One client on a <b>₹"+Math.round(perClient)+"</b>/month retainer => <b>"+clients+"</b> client(s) = ₹"+goalShow+" goal.<br>" +
+        "Small project (8-12 hrs): <b>₹"+rate*8+"</b> to ₹"+rate*12+" range.";
     }
     ["goal","hours","overhead"].forEach(function(id){
       document.getElementById(id).addEventListener("input", calc);
